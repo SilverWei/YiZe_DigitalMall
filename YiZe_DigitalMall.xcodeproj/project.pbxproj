@@ -13,6 +13,9 @@
 		07D161921C3B8FC500EEFC9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D161911C3B8FC500EEFC9F /* Assets.xcassets */; };
 		07D161951C3B8FC500EEFC9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07D161931C3B8FC500EEFC9F /* LaunchScreen.storyboard */; };
 		07D161A01C3B8FC500EEFC9F /* YiZe_DigitalMallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D1619F1C3B8FC500EEFC9F /* YiZe_DigitalMallTests.swift */; };
+		07E276AA1C3B9CCB001DDC1A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E276A91C3B9CCB001DDC1A /* UserInfo.swift */; };
+		07F35A8E1C3BAAE30054D5D2 /* GoodsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A8D1C3BAAE30054D5D2 /* GoodsInfo.swift */; };
+		07F35A901C3BAE0D0054D5D2 /* GoodsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A8F1C3BAE0D0054D5D2 /* GoodsCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		07D1619B1C3B8FC500EEFC9F /* YiZe_DigitalMallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YiZe_DigitalMallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1619F1C3B8FC500EEFC9F /* YiZe_DigitalMallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YiZe_DigitalMallTests.swift; sourceTree = "<group>"; };
 		07D161A11C3B8FC500EEFC9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07E276A91C3B9CCB001DDC1A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		07F35A8D1C3BAAE30054D5D2 /* GoodsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsInfo.swift; sourceTree = "<group>"; };
+		07F35A8F1C3BAE0D0054D5D2 /* GoodsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,9 @@
 			children = (
 				07D161AE1C3B92DB00EEFC9F /* NetMethod */,
 				07D161AD1C3B92CB00EEFC9F /* Protocal */,
-				07D161AC1C3B92B600EEFC9F /* Controller */,
-				07D161AB1C3B92AB00EEFC9F /* View */,
 				07D161AA1C3B928D00EEFC9F /* Model */,
+				07D161AB1C3B92AB00EEFC9F /* View */,
+				07D161AC1C3B92B600EEFC9F /* Controller */,
 				07D1618A1C3B8FC500EEFC9F /* AppDelegate.swift */,
 				07D1618C1C3B8FC500EEFC9F /* ViewController.swift */,
 				07D1618E1C3B8FC500EEFC9F /* Main.storyboard */,
@@ -104,6 +110,9 @@
 		07D161AA1C3B928D00EEFC9F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				07E276A91C3B9CCB001DDC1A /* UserInfo.swift */,
+				07F35A8D1C3BAAE30054D5D2 /* GoodsInfo.swift */,
+				07F35A8F1C3BAE0D0054D5D2 /* GoodsCategory.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -240,6 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D1618D1C3B8FC500EEFC9F /* ViewController.swift in Sources */,
+				07E276AA1C3B9CCB001DDC1A /* UserInfo.swift in Sources */,
+				07F35A8E1C3BAAE30054D5D2 /* GoodsInfo.swift in Sources */,
+				07F35A901C3BAE0D0054D5D2 /* GoodsCategory.swift in Sources */,
 				07D1618B1C3B8FC500EEFC9F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +440,7 @@
 				07D161A61C3B8FC500EEFC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07D161A71C3B8FC500EEFC9F /* Build configuration list for PBXNativeTarget "YiZe_DigitalMallTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +449,7 @@
 				07D161A91C3B8FC500EEFC9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
