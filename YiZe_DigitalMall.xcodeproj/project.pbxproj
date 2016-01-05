@@ -77,6 +77,11 @@
 		07D161891C3B8FC500EEFC9F /* YiZe_DigitalMall */ = {
 			isa = PBXGroup;
 			children = (
+				07D161AE1C3B92DB00EEFC9F /* NetMethod */,
+				07D161AD1C3B92CB00EEFC9F /* Protocal */,
+				07D161AC1C3B92B600EEFC9F /* Controller */,
+				07D161AB1C3B92AB00EEFC9F /* View */,
+				07D161AA1C3B928D00EEFC9F /* Model */,
 				07D1618A1C3B8FC500EEFC9F /* AppDelegate.swift */,
 				07D1618C1C3B8FC500EEFC9F /* ViewController.swift */,
 				07D1618E1C3B8FC500EEFC9F /* Main.storyboard */,
@@ -94,6 +99,41 @@
 				07D161A11C3B8FC500EEFC9F /* Info.plist */,
 			);
 			path = YiZe_DigitalMallTests;
+			sourceTree = "<group>";
+		};
+		07D161AA1C3B928D00EEFC9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		07D161AB1C3B92AB00EEFC9F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		07D161AC1C3B92B600EEFC9F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		07D161AD1C3B92CB00EEFC9F /* Protocal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Protocal;
+			sourceTree = "<group>";
+		};
+		07D161AE1C3B92DB00EEFC9F /* NetMethod */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetMethod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
