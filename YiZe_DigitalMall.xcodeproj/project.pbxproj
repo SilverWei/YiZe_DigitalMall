@@ -16,6 +16,30 @@
 		07E276AA1C3B9CCB001DDC1A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E276A91C3B9CCB001DDC1A /* UserInfo.swift */; };
 		07F35A8E1C3BAAE30054D5D2 /* GoodsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A8D1C3BAAE30054D5D2 /* GoodsInfo.swift */; };
 		07F35A901C3BAE0D0054D5D2 /* GoodsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A8F1C3BAE0D0054D5D2 /* GoodsCategory.swift */; };
+		07F35A931C3C95430054D5D2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F35A921C3C95430054D5D2 /* Home.storyboard */; };
+		07F35A951C3C96760054D5D2 /* UserInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F35A941C3C96760054D5D2 /* UserInfo.storyboard */; };
+		07F35A9A1C3CA3FF0054D5D2 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07F35A991C3CA3FF0054D5D2 /* Search.storyboard */; };
+		07F35A9C1C3CA9980054D5D2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A9B1C3CA9980054D5D2 /* HomeViewController.swift */; };
+		07F35A9E1C3CA9EF0054D5D2 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35A9D1C3CA9EF0054D5D2 /* HomeTableViewController.swift */; };
+		07F35B381C3CD06C0054D5D2 /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B311C3CD06C0054D5D2 /* MKButton.swift */; };
+		07F35B391C3CD06C0054D5D2 /* MKColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B321C3CD06C0054D5D2 /* MKColor.swift */; };
+		07F35B3A1C3CD06C0054D5D2 /* MKImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B331C3CD06C0054D5D2 /* MKImageView.swift */; };
+		07F35B3B1C3CD06C0054D5D2 /* MKLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B341C3CD06C0054D5D2 /* MKLabel.swift */; };
+		07F35B3C1C3CD06C0054D5D2 /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B351C3CD06C0054D5D2 /* MKLayer.swift */; };
+		07F35B3D1C3CD06C0054D5D2 /* MKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B361C3CD06C0054D5D2 /* MKTableViewCell.swift */; };
+		07F35B3E1C3CD06C0054D5D2 /* MKTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B371C3CD06C0054D5D2 /* MKTextField.swift */; };
+		07F35B591C3CD41C0054D5D2 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 07F35B411C3CD41B0054D5D2 /* MJRefresh.bundle */; };
+		07F35B5A1C3CD41C0054D5D2 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B441C3CD41B0054D5D2 /* MJRefreshComponent.m */; };
+		07F35B5B1C3CD41C0054D5D2 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B461C3CD41B0054D5D2 /* MJRefreshConst.m */; };
+		07F35B5C1C3CD41C0054D5D2 /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B481C3CD41B0054D5D2 /* MJRefreshFooter.m */; };
+		07F35B5D1C3CD41C0054D5D2 /* MJRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B4A1C3CD41B0054D5D2 /* MJRefreshGifFooter.m */; };
+		07F35B5E1C3CD41C0054D5D2 /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B4C1C3CD41B0054D5D2 /* MJRefreshGifHeader.m */; };
+		07F35B5F1C3CD41C0054D5D2 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B4E1C3CD41B0054D5D2 /* MJRefreshHeader.m */; };
+		07F35B601C3CD41C0054D5D2 /* MJRefreshLegendFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B501C3CD41B0054D5D2 /* MJRefreshLegendFooter.m */; };
+		07F35B611C3CD41C0054D5D2 /* MJRefreshLegendHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B521C3CD41B0054D5D2 /* MJRefreshLegendHeader.m */; };
+		07F35B621C3CD41C0054D5D2 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B541C3CD41B0054D5D2 /* UIScrollView+MJExtension.m */; };
+		07F35B631C3CD41C0054D5D2 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B561C3CD41C0054D5D2 /* UIScrollView+MJRefresh.m */; };
+		07F35B641C3CD41C0054D5D2 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F35B581C3CD41C0054D5D2 /* UIView+MJExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07D161871C3B8FC500EEFC9F /* YiZe_DigitalMall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YiZe_DigitalMall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D161871C3B8FC500EEFC9F /* 易泽数码商城.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "易泽数码商城.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D1618A1C3B8FC500EEFC9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07D1618C1C3B8FC500EEFC9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07D1618F1C3B8FC500EEFC9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +66,44 @@
 		07E276A91C3B9CCB001DDC1A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		07F35A8D1C3BAAE30054D5D2 /* GoodsInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsInfo.swift; sourceTree = "<group>"; };
 		07F35A8F1C3BAE0D0054D5D2 /* GoodsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodsCategory.swift; sourceTree = "<group>"; };
+		07F35A921C3C95430054D5D2 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		07F35A941C3C96760054D5D2 /* UserInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserInfo.storyboard; sourceTree = "<group>"; };
+		07F35A991C3CA3FF0054D5D2 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		07F35A9B1C3CA9980054D5D2 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		07F35A9D1C3CA9EF0054D5D2 /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		07F35B301C3CD06C0054D5D2 /* bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
+		07F35B311C3CD06C0054D5D2 /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		07F35B321C3CD06C0054D5D2 /* MKColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKColor.swift; sourceTree = "<group>"; };
+		07F35B331C3CD06C0054D5D2 /* MKImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKImageView.swift; sourceTree = "<group>"; };
+		07F35B341C3CD06C0054D5D2 /* MKLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLabel.swift; sourceTree = "<group>"; };
+		07F35B351C3CD06C0054D5D2 /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		07F35B361C3CD06C0054D5D2 /* MKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTableViewCell.swift; sourceTree = "<group>"; };
+		07F35B371C3CD06C0054D5D2 /* MKTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKTextField.swift; sourceTree = "<group>"; };
+		07F35B3F1C3CD0920054D5D2 /* bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridging.h; sourceTree = "<group>"; };
+		07F35B411C3CD41B0054D5D2 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
+		07F35B421C3CD41B0054D5D2 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		07F35B431C3CD41B0054D5D2 /* MJRefreshComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshComponent.h; sourceTree = "<group>"; };
+		07F35B441C3CD41B0054D5D2 /* MJRefreshComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshComponent.m; sourceTree = "<group>"; };
+		07F35B451C3CD41B0054D5D2 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		07F35B461C3CD41B0054D5D2 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		07F35B471C3CD41B0054D5D2 /* MJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooter.h; sourceTree = "<group>"; };
+		07F35B481C3CD41B0054D5D2 /* MJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooter.m; sourceTree = "<group>"; };
+		07F35B491C3CD41B0054D5D2 /* MJRefreshGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifFooter.h; sourceTree = "<group>"; };
+		07F35B4A1C3CD41B0054D5D2 /* MJRefreshGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshGifFooter.m; sourceTree = "<group>"; };
+		07F35B4B1C3CD41B0054D5D2 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		07F35B4C1C3CD41B0054D5D2 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		07F35B4D1C3CD41B0054D5D2 /* MJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeader.h; sourceTree = "<group>"; };
+		07F35B4E1C3CD41B0054D5D2 /* MJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeader.m; sourceTree = "<group>"; };
+		07F35B4F1C3CD41B0054D5D2 /* MJRefreshLegendFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshLegendFooter.h; sourceTree = "<group>"; };
+		07F35B501C3CD41B0054D5D2 /* MJRefreshLegendFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshLegendFooter.m; sourceTree = "<group>"; };
+		07F35B511C3CD41B0054D5D2 /* MJRefreshLegendHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshLegendHeader.h; sourceTree = "<group>"; };
+		07F35B521C3CD41B0054D5D2 /* MJRefreshLegendHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshLegendHeader.m; sourceTree = "<group>"; };
+		07F35B531C3CD41B0054D5D2 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		07F35B541C3CD41B0054D5D2 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		07F35B551C3CD41B0054D5D2 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		07F35B561C3CD41C0054D5D2 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		07F35B571C3CD41C0054D5D2 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		07F35B581C3CD41C0054D5D2 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +127,8 @@
 		07D1617E1C3B8FC500EEFC9F = {
 			isa = PBXGroup;
 			children = (
+				07F35B401C3CD41B0054D5D2 /* MJRefresh */,
+				07F35B2F1C3CD06C0054D5D2 /* MaterialKit */,
 				07D161891C3B8FC500EEFC9F /* YiZe_DigitalMall */,
 				07D1619E1C3B8FC500EEFC9F /* YiZe_DigitalMallTests */,
 				07D161881C3B8FC500EEFC9F /* Products */,
@@ -74,7 +138,7 @@
 		07D161881C3B8FC500EEFC9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				07D161871C3B8FC500EEFC9F /* YiZe_DigitalMall.app */,
+				07D161871C3B8FC500EEFC9F /* 易泽数码商城.app */,
 				07D1619B1C3B8FC500EEFC9F /* YiZe_DigitalMallTests.xctest */,
 			);
 			name = Products;
@@ -88,9 +152,10 @@
 				07D161AA1C3B928D00EEFC9F /* Model */,
 				07D161AB1C3B92AB00EEFC9F /* View */,
 				07D161AC1C3B92B600EEFC9F /* Controller */,
+				07F35A911C3C945A0054D5D2 /* Storyboard */,
 				07D1618A1C3B8FC500EEFC9F /* AppDelegate.swift */,
 				07D1618C1C3B8FC500EEFC9F /* ViewController.swift */,
-				07D1618E1C3B8FC500EEFC9F /* Main.storyboard */,
+				07F35B3F1C3CD0920054D5D2 /* bridging.h */,
 				07D161911C3B8FC500EEFC9F /* Assets.xcassets */,
 				07D161931C3B8FC500EEFC9F /* LaunchScreen.storyboard */,
 				07D161961C3B8FC500EEFC9F /* Info.plist */,
@@ -127,6 +192,8 @@
 		07D161AC1C3B92B600EEFC9F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				07F35A9B1C3CA9980054D5D2 /* HomeViewController.swift */,
+				07F35A9D1C3CA9EF0054D5D2 /* HomeTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -143,6 +210,63 @@
 			children = (
 			);
 			name = NetMethod;
+			sourceTree = "<group>";
+		};
+		07F35A911C3C945A0054D5D2 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				07D1618E1C3B8FC500EEFC9F /* Main.storyboard */,
+				07F35A921C3C95430054D5D2 /* Home.storyboard */,
+				07F35A941C3C96760054D5D2 /* UserInfo.storyboard */,
+				07F35A991C3CA3FF0054D5D2 /* Search.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		07F35B2F1C3CD06C0054D5D2 /* MaterialKit */ = {
+			isa = PBXGroup;
+			children = (
+				07F35B301C3CD06C0054D5D2 /* bridging.h */,
+				07F35B311C3CD06C0054D5D2 /* MKButton.swift */,
+				07F35B321C3CD06C0054D5D2 /* MKColor.swift */,
+				07F35B331C3CD06C0054D5D2 /* MKImageView.swift */,
+				07F35B341C3CD06C0054D5D2 /* MKLabel.swift */,
+				07F35B351C3CD06C0054D5D2 /* MKLayer.swift */,
+				07F35B361C3CD06C0054D5D2 /* MKTableViewCell.swift */,
+				07F35B371C3CD06C0054D5D2 /* MKTextField.swift */,
+			);
+			path = MaterialKit;
+			sourceTree = "<group>";
+		};
+		07F35B401C3CD41B0054D5D2 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				07F35B411C3CD41B0054D5D2 /* MJRefresh.bundle */,
+				07F35B421C3CD41B0054D5D2 /* MJRefresh.h */,
+				07F35B431C3CD41B0054D5D2 /* MJRefreshComponent.h */,
+				07F35B441C3CD41B0054D5D2 /* MJRefreshComponent.m */,
+				07F35B451C3CD41B0054D5D2 /* MJRefreshConst.h */,
+				07F35B461C3CD41B0054D5D2 /* MJRefreshConst.m */,
+				07F35B471C3CD41B0054D5D2 /* MJRefreshFooter.h */,
+				07F35B481C3CD41B0054D5D2 /* MJRefreshFooter.m */,
+				07F35B491C3CD41B0054D5D2 /* MJRefreshGifFooter.h */,
+				07F35B4A1C3CD41B0054D5D2 /* MJRefreshGifFooter.m */,
+				07F35B4B1C3CD41B0054D5D2 /* MJRefreshGifHeader.h */,
+				07F35B4C1C3CD41B0054D5D2 /* MJRefreshGifHeader.m */,
+				07F35B4D1C3CD41B0054D5D2 /* MJRefreshHeader.h */,
+				07F35B4E1C3CD41B0054D5D2 /* MJRefreshHeader.m */,
+				07F35B4F1C3CD41B0054D5D2 /* MJRefreshLegendFooter.h */,
+				07F35B501C3CD41B0054D5D2 /* MJRefreshLegendFooter.m */,
+				07F35B511C3CD41B0054D5D2 /* MJRefreshLegendHeader.h */,
+				07F35B521C3CD41B0054D5D2 /* MJRefreshLegendHeader.m */,
+				07F35B531C3CD41B0054D5D2 /* UIScrollView+MJExtension.h */,
+				07F35B541C3CD41B0054D5D2 /* UIScrollView+MJExtension.m */,
+				07F35B551C3CD41B0054D5D2 /* UIScrollView+MJRefresh.h */,
+				07F35B561C3CD41C0054D5D2 /* UIScrollView+MJRefresh.m */,
+				07F35B571C3CD41C0054D5D2 /* UIView+MJExtension.h */,
+				07F35B581C3CD41C0054D5D2 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,7 +286,7 @@
 			);
 			name = YiZe_DigitalMall;
 			productName = YiZe_DigitalMall;
-			productReference = 07D161871C3B8FC500EEFC9F /* YiZe_DigitalMall.app */;
+			productReference = 07D161871C3B8FC500EEFC9F /* 易泽数码商城.app */;
 			productType = "com.apple.product-type.application";
 		};
 		07D1619A1C3B8FC500EEFC9F /* YiZe_DigitalMallTests */ = {
@@ -229,8 +353,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D161951C3B8FC500EEFC9F /* LaunchScreen.storyboard in Resources */,
+				07F35A951C3C96760054D5D2 /* UserInfo.storyboard in Resources */,
+				07F35B591C3CD41C0054D5D2 /* MJRefresh.bundle in Resources */,
 				07D161921C3B8FC500EEFC9F /* Assets.xcassets in Resources */,
 				07D161901C3B8FC500EEFC9F /* Main.storyboard in Resources */,
+				07F35A9A1C3CA3FF0054D5D2 /* Search.storyboard in Resources */,
+				07F35A931C3C95430054D5D2 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +377,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D1618D1C3B8FC500EEFC9F /* ViewController.swift in Sources */,
+				07F35B3C1C3CD06C0054D5D2 /* MKLayer.swift in Sources */,
+				07F35B5D1C3CD41C0054D5D2 /* MJRefreshGifFooter.m in Sources */,
+				07F35B5A1C3CD41C0054D5D2 /* MJRefreshComponent.m in Sources */,
+				07F35B601C3CD41C0054D5D2 /* MJRefreshLegendFooter.m in Sources */,
+				07F35B3A1C3CD06C0054D5D2 /* MKImageView.swift in Sources */,
+				07F35B391C3CD06C0054D5D2 /* MKColor.swift in Sources */,
+				07F35B621C3CD41C0054D5D2 /* UIScrollView+MJExtension.m in Sources */,
 				07E276AA1C3B9CCB001DDC1A /* UserInfo.swift in Sources */,
+				07F35B3E1C3CD06C0054D5D2 /* MKTextField.swift in Sources */,
+				07F35B5C1C3CD41C0054D5D2 /* MJRefreshFooter.m in Sources */,
 				07F35A8E1C3BAAE30054D5D2 /* GoodsInfo.swift in Sources */,
+				07F35B5B1C3CD41C0054D5D2 /* MJRefreshConst.m in Sources */,
+				07F35B5E1C3CD41C0054D5D2 /* MJRefreshGifHeader.m in Sources */,
 				07F35A901C3BAE0D0054D5D2 /* GoodsCategory.swift in Sources */,
+				07F35B611C3CD41C0054D5D2 /* MJRefreshLegendHeader.m in Sources */,
+				07F35B641C3CD41C0054D5D2 /* UIView+MJExtension.m in Sources */,
+				07F35A9E1C3CA9EF0054D5D2 /* HomeTableViewController.swift in Sources */,
+				07F35B3B1C3CD06C0054D5D2 /* MKLabel.swift in Sources */,
+				07F35B5F1C3CD41C0054D5D2 /* MJRefreshHeader.m in Sources */,
 				07D1618B1C3B8FC500EEFC9F /* AppDelegate.swift in Sources */,
+				07F35B631C3CD41C0054D5D2 /* UIScrollView+MJRefresh.m in Sources */,
+				07F35B381C3CD06C0054D5D2 /* MKButton.swift in Sources */,
+				07F35B3D1C3CD06C0054D5D2 /* MKTableViewCell.swift in Sources */,
+				07F35A9C1C3CA9980054D5D2 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +530,8 @@
 				INFOPLIST_FILE = YiZe_DigitalMall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dmqlacgal.YiZe-DigitalMall";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易泽数码商城";
+				SWIFT_OBJC_BRIDGING_HEADER = YiZe_DigitalMall/bridging.h;
 			};
 			name = Debug;
 		};
@@ -393,7 +542,8 @@
 				INFOPLIST_FILE = YiZe_DigitalMall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dmqlacgal.YiZe-DigitalMall";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易泽数码商城";
+				SWIFT_OBJC_BRIDGING_HEADER = YiZe_DigitalMall/bridging.h;
 			};
 			name = Release;
 		};
