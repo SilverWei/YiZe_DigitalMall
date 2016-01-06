@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ShoppingCartbuttonViewController.swift
 //  YiZe_DigitalMall
 //
 //  Created by dmqlMAC on 16/1/6.
@@ -8,11 +8,19 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class ShoppingCartbuttonViewController: UIViewController {
+    
+    @IBOutlet var ShoppingCartbutton: MKButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        ShoppingCartbutton.cornerRadius = 25.0
+        ShoppingCartbutton.layer.shadowOpacity = 0.75
+        ShoppingCartbutton.layer.shadowRadius = 3.5
+        ShoppingCartbutton.layer.shadowColor = UIColor.blackColor().CGColor
+        ShoppingCartbutton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
+        
         // Do any additional setup after loading the view.
     }
 

@@ -27,7 +27,6 @@ class HomeTableViewController: UITableViewController {
     }
     
     func print1(){
-        print("123")
         self.HomeTableView.header.endRefreshing()
     }
 

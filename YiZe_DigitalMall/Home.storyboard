@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Km-O4-clM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KRm-zO-z6H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--首页-->
+        <!--Navigation Controller-->
         <scene sceneID="QdY-Iy-I80">
             <objects>
-                <navigationController id="3Km-O4-clM" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" id="ivl-Kq-7jd"/>
+                <navigationController id="3Km-O4-clM" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOA-h1-WtP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -25,21 +24,76 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8i-T0-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="89"/>
+            <point key="canvasLocation" x="1471" y="-77.5"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="JpI-xC-rkG">
+            <objects>
+                <viewController id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKe-8B-7fI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yhd-ui-NvD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tmh-PI-cWi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDq-6b-Gdb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <segue destination="3Km-O4-clM" kind="embed" id="qsZ-xU-wM0"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmD-bz-CSb">
+                                <rect key="frame" x="530" y="483" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Mge-et-JOW"/>
+                                    <constraint firstAttribute="height" constant="60" id="PXA-Nf-c9f"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="rse-xY-2YF" kind="embed" id="Rcw-EX-CV0"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mDq-6b-Gdb" firstAttribute="top" secondItem="tmh-PI-cWi" secondAttribute="top" id="1zz-m8-pRP"/>
+                            <constraint firstItem="mDq-6b-Gdb" firstAttribute="leading" secondItem="tmh-PI-cWi" secondAttribute="leading" id="aDB-3h-oMP"/>
+                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="vmD-bz-CSb" secondAttribute="bottom" constant="10" id="go4-JJ-l2e"/>
+                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="mDq-6b-Gdb" secondAttribute="bottom" id="lP9-WF-ZYh"/>
+                            <constraint firstAttribute="trailing" secondItem="vmD-bz-CSb" secondAttribute="trailing" constant="10" id="piB-IA-B81"/>
+                            <constraint firstAttribute="trailing" secondItem="mDq-6b-Gdb" secondAttribute="trailing" id="yjm-Ha-Bm9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2dd-gv-0lE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgO-du-TWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="-77"/>
+        </scene>
+        <!--ShoppingCartbutton-->
+        <scene sceneID="pdp-aT-r8Y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCartbutton" id="rse-xY-2YF" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Thw-aK-Oyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998.5" y="370"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="5lh-0Y-j5W">
             <objects>
                 <tableViewController id="Fjb-5y-fOB" customClass="HomeTableViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="PeD-E7-fyb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="最新商品" id="Dgd-a7-twn">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="180" id="Jzv-ie-RDx">
-                                        <rect key="frame" x="0.0" y="114" width="600" height="180"/>
+                                        <rect key="frame" x="0.0" y="94" width="600" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jzv-ie-RDx" id="uGh-8H-rRN">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="179"/>
@@ -51,7 +105,7 @@
                             <tableViewSection headerTitle="推荐商品" id="DAU-3K-Zvu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="156" id="Uz3-s1-PLJ">
-                                        <rect key="frame" x="0.0" y="345" width="600" height="156"/>
+                                        <rect key="frame" x="0.0" y="325" width="600" height="156"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uz3-s1-PLJ" id="uf1-eq-V5p">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
@@ -63,7 +117,7 @@
                             <tableViewSection headerTitle="会员积会排行" id="ydz-f0-SgU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="95" id="CeJ-wk-3nv">
-                                        <rect key="frame" x="0.0" y="552" width="600" height="95"/>
+                                        <rect key="frame" x="0.0" y="532" width="600" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CeJ-wk-3nv" id="wUO-Ng-VGa">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="94"/>
@@ -75,7 +129,7 @@
                             <tableViewSection headerTitle="最受欢迎商品排行" id="mBa-MP-QIj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zhQ-c2-WFc">
-                                        <rect key="frame" x="0.0" y="698" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="678" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zhQ-c2-WFc" id="jUm-uN-pad">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -96,7 +150,7 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5ZK-dx-yN7" customClass="MKTextField" customModule="易泽数码商城">
-                            <rect key="frame" x="66" y="7" width="468" height="30"/>
+                            <rect key="frame" x="61" y="7" width="484" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -112,10 +166,32 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ers-jo-nqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357" y="89"/>
+            <point key="canvasLocation" x="2174" y="-77.5"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="iwn-T0-84g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRm-zO-z6H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="ic_local_grocery_store_white_36pt" id="AS5-Sa-ohb"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="G1Q-d1-dmn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wQv-0K-QSU" kind="relationship" relationship="rootViewController" id="n43-xU-K1g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvL-Cb-otA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="-77"/>
         </scene>
     </scenes>
     <resources>
         <image name="ic_dns" width="24" height="24"/>
+        <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
     </resources>
 </document>

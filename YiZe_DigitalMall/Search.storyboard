@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="搜索" id="Vli-IC-qa3"/>
+                    <tabBarItem key="tabBarItem" title="搜索" selectedImage="Logo" id="Vli-IC-qa3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="593-1s-8kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,4 +26,7 @@
             <point key="canvasLocation" x="540" y="475"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="40" height="40"/>
+    </resources>
 </document>
