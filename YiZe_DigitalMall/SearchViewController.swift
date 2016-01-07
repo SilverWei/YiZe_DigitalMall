@@ -1,27 +1,27 @@
 //
-//  ShoppingCartbuttonViewController.swift
-//  YiZe_DigitalMall
+//  SearchViewController.swift
+//  		
 //
-//  Created by dmqlMAC on 16/1/6.
+//  Created by dmqlMAC on 16/1/7.
 //  Copyright © 2016年 dmqlMAC. All rights reserved.
 //
 
 import UIKit
 
-class ShoppingCartbuttonViewController: UIViewController {
-    
+class SearchViewController: UIViewController {
+
     @IBOutlet var ShoppingCartbutton: MKButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // Do any additional setup after loading the view.
         ShoppingCartbutton.cornerRadius = 25.0
         ShoppingCartbutton.layer.shadowOpacity = 0.75
         ShoppingCartbutton.layer.shadowRadius = 3.5
         ShoppingCartbutton.layer.shadowColor = UIColor.blackColor().CGColor
         ShoppingCartbutton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
         
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

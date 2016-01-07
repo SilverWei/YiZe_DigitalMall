@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="JpI-xC-rkG">
             <objects>
-                <viewController id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKe-8B-7fI"/>
                         <viewControllerLayoutGuide type="bottom" id="Yhd-ui-NvD"/>
@@ -44,42 +44,51 @@
                                     <segue destination="3Km-O4-clM" kind="embed" id="qsZ-xU-wM0"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vmD-bz-CSb">
-                                <rect key="frame" x="530" y="483" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URy-ED-C2m" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
+                                <rect key="frame" x="540" y="491" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="Mge-et-JOW"/>
-                                    <constraint firstAttribute="height" constant="60" id="PXA-Nf-c9f"/>
+                                    <constraint firstAttribute="width" constant="50" id="4Tn-xX-S0y"/>
+                                    <constraint firstAttribute="height" constant="50" id="KUa-TN-hSd"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" image="ic_local_grocery_store_white_36pt">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="rse-xY-2YF" kind="embed" id="Rcw-EX-CV0"/>
+                                    <segue destination="gN8-yy-Dap" kind="show" id="Tbq-kD-7th"/>
                                 </connections>
-                            </containerView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mDq-6b-Gdb" firstAttribute="top" secondItem="tmh-PI-cWi" secondAttribute="top" id="1zz-m8-pRP"/>
+                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="URy-ED-C2m" secondAttribute="bottom" constant="10" id="ZoF-Ff-fs4"/>
                             <constraint firstItem="mDq-6b-Gdb" firstAttribute="leading" secondItem="tmh-PI-cWi" secondAttribute="leading" id="aDB-3h-oMP"/>
-                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="vmD-bz-CSb" secondAttribute="bottom" constant="10" id="go4-JJ-l2e"/>
                             <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="mDq-6b-Gdb" secondAttribute="bottom" id="lP9-WF-ZYh"/>
-                            <constraint firstAttribute="trailing" secondItem="vmD-bz-CSb" secondAttribute="trailing" constant="10" id="piB-IA-B81"/>
+                            <constraint firstAttribute="trailing" secondItem="URy-ED-C2m" secondAttribute="trailing" constant="10" id="s2J-K9-a6j"/>
                             <constraint firstAttribute="trailing" secondItem="mDq-6b-Gdb" secondAttribute="trailing" id="yjm-Ha-Bm9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2dd-gv-0lE"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ShoppingCartbutton" destination="URy-ED-C2m" id="Elm-QG-Gbz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AgO-du-TWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="799" y="-77"/>
         </scene>
-        <!--ShoppingCartbutton-->
-        <scene sceneID="pdp-aT-r8Y">
+        <!--ShoppingCart-->
+        <scene sceneID="EbQ-Zv-OUM">
             <objects>
-                <viewControllerPlaceholder storyboardName="ShoppingCartbutton" id="rse-xY-2YF" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Thw-aK-Oyv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="gN8-yy-Dap" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwF-12-hdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998.5" y="370"/>
+            <point key="canvasLocation" x="799" y="400"/>
         </scene>
         <!--Home Table View Controller-->
         <scene sceneID="5lh-0Y-j5W">
@@ -174,13 +183,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRm-zO-z6H" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="ic_local_grocery_store_white_36pt" id="AS5-Sa-ohb"/>
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="G1Q-d1-dmn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="37M-VR-8qg">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="wQv-0K-QSU" kind="relationship" relationship="rootViewController" id="n43-xU-K1g"/>
                     </connections>

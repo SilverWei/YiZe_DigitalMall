@@ -1,32 +1,188 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iKC-F9-uGl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ykq-tI-n4L">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--搜索-->
-        <scene sceneID="68T-72-RoB">
+        <scene sceneID="BnR-jB-B8y">
             <objects>
-                <viewController id="iKC-F9-uGl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aVd-CG-2Wx"/>
-                        <viewControllerLayoutGuide type="bottom" id="2jQ-ev-pTr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="E9l-ep-TO3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="搜索" selectedImage="Logo" id="Vli-IC-qa3"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ykq-tI-n4L" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="搜索" image="ic_local_grocery_store_white_36pt" id="Vli-IC-qa3"/>
+                    <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="593-1s-8kg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="yiY-GI-DZb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LD3-n7-B9n">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="QS4-ib-JM5" kind="relationship" relationship="rootViewController" id="bYw-dw-jlK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xfs-0k-rnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="540" y="475"/>
         </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="1kS-YT-SXL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="a7b-kj-wrc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccG-Hs-Oox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="930"/>
+        </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="3bt-5w-l9g">
+            <objects>
+                <tableViewController id="GB5-u3-Qyf" customClass="SearchTableViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eVe-t1-7h3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="srB-0c-iVu">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="udr-rn-y95">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="udr-rn-y95" id="jSu-0x-zz0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uYh-K5-RrZ">
+                                        <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uYh-K5-RrZ" id="bfy-Vk-QRe">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JYX-ff-pdW">
+                                        <rect key="frame" x="0.0" y="132" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JYX-ff-pdW" id="1PR-1G-AAq">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="GB5-u3-Qyf" id="BwJ-uy-VMT"/>
+                            <outlet property="delegate" destination="GB5-u3-Qyf" id="efg-1Q-WdT"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2Ik-vn-Ihc">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_dns" id="qXC-DO-L7M">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="X5T-10-TBY" customClass="MKTextField" customModule="易泽数码商城" customModuleProvider="target">
+                            <rect key="frame" x="66" y="7" width="479" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="G4k-lB-Z5N">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SearchTableView" destination="eVe-t1-7h3" id="1MD-cY-4Ap"/>
+                        <outlet property="SearchTextView" destination="X5T-10-TBY" id="E4a-Bd-7Kl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VH7-BP-wuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578" y="488.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lB9-M4-nbM">
+            <objects>
+                <navigationController id="Lab-P7-ci3" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0yR-Wg-KjP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GB5-u3-Qyf" kind="relationship" relationship="rootViewController" id="krf-Gf-N5n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORD-2Z-DD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1928" y="474.5"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Gjq-4j-iNc">
+            <objects>
+                <viewController id="QS4-ib-JM5" customClass="SearchViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZDo-Vt-Dg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="xzg-XZ-gn2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BeE-bU-7Wo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ve0-0z-rG1">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <segue destination="Lab-P7-ci3" kind="embed" id="8rE-wp-ukB"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-DT-fxK" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
+                                <rect key="frame" x="540" y="491" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Efl-rf-rK8"/>
+                                    <constraint firstAttribute="height" constant="50" id="qQy-sl-vW5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" image="ic_local_grocery_store_white_36pt">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="a7b-kj-wrc" kind="show" id="hZ7-2W-pd8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ve0-0z-rG1" firstAttribute="top" secondItem="BeE-bU-7Wo" secondAttribute="top" id="8Fn-Rc-up7"/>
+                            <constraint firstItem="xzg-XZ-gn2" firstAttribute="top" secondItem="gJz-DT-fxK" secondAttribute="bottom" constant="10" id="MiU-dv-d99"/>
+                            <constraint firstAttribute="trailing" secondItem="ve0-0z-rG1" secondAttribute="trailing" id="SD4-HP-00D"/>
+                            <constraint firstAttribute="trailing" secondItem="gJz-DT-fxK" secondAttribute="trailing" constant="10" id="Xey-aB-DuV"/>
+                            <constraint firstItem="ve0-0z-rG1" firstAttribute="leading" secondItem="BeE-bU-7Wo" secondAttribute="leading" id="XjQ-Kx-gAa"/>
+                            <constraint firstItem="xzg-XZ-gn2" firstAttribute="top" secondItem="ve0-0z-rG1" secondAttribute="bottom" id="p2A-zI-TuJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BLi-hE-v3m"/>
+                    <connections>
+                        <outlet property="ShoppingCartbutton" destination="gJz-DT-fxK" id="AGC-Y7-L8z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wb3-Lq-WaB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1226" y="475"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="40" height="40"/>
+        <image name="ic_dns" width="24" height="24"/>
+        <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
     </resources>
 </document>

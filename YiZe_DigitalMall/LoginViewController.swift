@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  LoginViewController.swift
 //  		
 //
 //  Created by dmqlMAC on 16/1/7.
@@ -8,22 +8,15 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    @IBOutlet var ShoppingCartbutton: MKButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ShoppingCartbutton.cornerRadius = 25.0
-        ShoppingCartbutton.layer.shadowOpacity = 0.75
-        ShoppingCartbutton.layer.shadowRadius = 3.5
-        ShoppingCartbutton.layer.shadowColor = UIColor.blackColor().CGColor
-        ShoppingCartbutton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
-        
-        // Do any additional setup after loading the view.
-    }
 
+        // Do any additional setup after loading the view.
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

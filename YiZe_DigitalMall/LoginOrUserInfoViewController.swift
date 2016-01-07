@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  LoginOrUserInfoViewController.swift
 //  		
 //
 //  Created by dmqlMAC on 16/1/7.
@@ -8,20 +8,34 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class LoginOrUserInfoViewController: UIViewController {
 
-    @IBOutlet var ShoppingCartbutton: MKButton!
+    @IBOutlet weak var LoginView: UIView!
+    @IBOutlet weak var UserInfoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ShoppingCartbutton.cornerRadius = 25.0
-        ShoppingCartbutton.layer.shadowOpacity = 0.75
-        ShoppingCartbutton.layer.shadowRadius = 3.5
-        ShoppingCartbutton.layer.shadowColor = UIColor.blackColor().CGColor
-        ShoppingCartbutton.layer.shadowOffset = CGSize(width: 1.0, height: 5.5)
+        Monitoringloginstatus()
+
+    }
+
+    func Monitoringloginstatus(){
+        if(1 == 0){
+            LoginView.hidden = true
+            UserInfoView.hidden = false
+        }
+        else{
+            LoginView.hidden = false
+            UserInfoView.hidden = true
+        }
+    }
+    
+    @IBAction func LoginAfter(segue:UIStoryboardSegue){
         
-        // Do any additional setup after loading the view.
+        LoginView.hidden = true
+        UserInfoView.hidden = false
+
     }
 
     override func didReceiveMemoryWarning() {

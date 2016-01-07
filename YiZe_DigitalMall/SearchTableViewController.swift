@@ -1,18 +1,17 @@
 //
-//  HomeTableViewController.swift/Users/dmqlMAC/Documents/YiZe_DigitalMall/YiZe_DigitalMall/HomeViewController.swift
-//  YiZe_DigitalMall
+//  SearchTableViewController.swift
+//  		
 //
-//  Created by dmqlMAC on 16/1/6.
+//  Created by dmqlMAC on 16/1/7.
 //  Copyright © 2016年 dmqlMAC. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController {
 
     @IBOutlet weak var SearchTextView: MKTextField!
-    @IBOutlet var HomeTableView: UITableView!
-
+    @IBOutlet var SearchTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +20,14 @@ class HomeTableViewController: UITableViewController {
         SearchTextView.placeholder = "搜索商品..."
         SearchTextView.backgroundColor = UIColor.grayColor()
         SearchTextView.tintColor = UIColor.whiteColor()
-
-        
         
         //下拉刷新
-        self.HomeTableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "print1")
+        self.SearchTableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "print1")
         
     }
     
     func print1(){
-        self.HomeTableView.header.endRefreshing()
+        self.SearchTableView.header.endRefreshing()
     }
 
     //上拉隐藏navigationBar动画
@@ -51,17 +48,18 @@ class HomeTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Table view data source
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
-    
-    
+
 
 
 }

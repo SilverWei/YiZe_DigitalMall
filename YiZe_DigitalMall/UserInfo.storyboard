@@ -1,29 +1,149 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uly-f8-mb5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y6k-fY-hJL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--会员-->
-        <scene sceneID="RP8-NN-RZC">
+        <!--会员中心-->
+        <scene sceneID="ti7-Gf-YLk">
             <objects>
-                <viewController id="uly-f8-mb5" sceneMemberID="viewController">
+                <tableViewController id="lAG-oQ-WEF" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="miK-IP-4Df">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="hpM-UH-3u3">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MnI-Tp-951">
+                                        <rect key="frame" x="0.0" y="79" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MnI-Tp-951" id="rs5-EE-YTD">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bZ8-U3-vZ0">
+                                        <rect key="frame" x="0.0" y="123" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bZ8-U3-vZ0" id="AHs-5c-AEd">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Prd-L6-rfv">
+                                        <rect key="frame" x="0.0" y="167" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Prd-L6-rfv" id="wZu-HX-Nuk">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="lAG-oQ-WEF" id="2b3-Sr-yCm"/>
+                            <outlet property="delegate" destination="lAG-oQ-WEF" id="hhJ-SQ-vcM"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="会员中心" id="DVE-Vx-X9k">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JOF-qu-5U1">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="ths-Nq-YFx" kind="show" id="Y7x-X1-MWA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJS-Gy-MBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1092" y="-62"/>
+        </scene>
+        <!--UserInfoEdit-->
+        <scene sceneID="OjK-GO-gvg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UserInfoEdit" id="ths-Nq-YFx" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jN5-l7-qaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="-377"/>
+        </scene>
+        <!--会员-->
+        <scene sceneID="Se6-VW-9Ot">
+            <objects>
+                <viewController id="y6k-fY-hJL" customClass="LoginOrUserInfoViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="E2V-hE-TsX"/>
-                        <viewControllerLayoutGuide type="bottom" id="afD-ms-lhh"/>
+                        <viewControllerLayoutGuide type="top" id="4lt-bX-inE"/>
+                        <viewControllerLayoutGuide type="bottom" id="OjE-NA-UuE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QrW-sO-hF8">
+                    <view key="view" contentMode="scaleToFill" id="XHN-fm-L9X">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FDL-Se-WG6">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <connections>
+                                    <segue destination="f1m-Fg-S0m" kind="embed" id="Zci-y2-1Uu"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1e-fs-4HG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <segue destination="LLf-Hb-iXJ" kind="embed" id="9zU-Nr-EtZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o1e-fs-4HG" firstAttribute="leading" secondItem="XHN-fm-L9X" secondAttribute="leading" id="Ej2-79-T4E"/>
+                            <constraint firstItem="o1e-fs-4HG" firstAttribute="top" secondItem="XHN-fm-L9X" secondAttribute="top" id="HBs-eS-xr5"/>
+                            <constraint firstAttribute="trailing" secondItem="o1e-fs-4HG" secondAttribute="trailing" id="L04-1e-U6T"/>
+                            <constraint firstItem="OjE-NA-UuE" firstAttribute="top" secondItem="o1e-fs-4HG" secondAttribute="bottom" id="Ph5-Ue-PGR"/>
+                            <constraint firstItem="OjE-NA-UuE" firstAttribute="top" secondItem="FDL-Se-WG6" secondAttribute="bottom" id="WAJ-32-744"/>
+                            <constraint firstItem="FDL-Se-WG6" firstAttribute="leading" secondItem="XHN-fm-L9X" secondAttribute="leading" id="jIt-Zi-hhp"/>
+                            <constraint firstAttribute="trailing" secondItem="FDL-Se-WG6" secondAttribute="trailing" id="mWu-ZJ-Tfh"/>
+                            <constraint firstItem="FDL-Se-WG6" firstAttribute="top" secondItem="4lt-bX-inE" secondAttribute="bottom" id="twD-hd-cDs"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="会员" id="4eg-kD-J27"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="会员" image="ic_local_grocery_store_white_36pt" id="4eg-kD-J27"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="LoginView" destination="FDL-Se-WG6" id="Auq-Zv-mLN"/>
+                        <outlet property="UserInfoView" destination="o1e-fs-4HG" id="Pfv-bp-bU5"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iL2-7G-cnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzn-oE-Vbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404" y="327"/>
+            <point key="canvasLocation" x="-298" y="-62"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="eP3-fg-n46">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="LoginView" storyboardName="Login" id="f1m-Fg-S0m" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktc-Sb-8K3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="395"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ta7-4L-htZ">
+            <objects>
+                <navigationController storyboardIdentifier="UserInfoView" id="LLf-Hb-iXJ" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="srF-rW-EFW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lAG-oQ-WEF" kind="relationship" relationship="rootViewController" id="edZ-vh-Mbw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFa-dS-xXh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="427" y="-62"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
+    </resources>
 </document>
