@@ -18,6 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //状态栏颜色
         UINavigationBar.appearance().barStyle = UIBarStyle.Black
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let containerViewController = ContainerViewController()
+        
+        window!.rootViewController = containerViewController
+        window!.makeKeyAndVisible()
+        
         return true
     }
 

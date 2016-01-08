@@ -29,7 +29,7 @@
         <!--Home View Controller-->
         <scene sceneID="JpI-xC-rkG">
             <objects>
-                <viewController storyboardIdentifier="HomeView" id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nKe-8B-7fI"/>
                         <viewControllerLayoutGuide type="bottom" id="Yhd-ui-NvD"/>
@@ -157,6 +157,9 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="ic_dns" id="5I6-FR-0TY">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="zFB-n6-ftA" kind="unwind" unwindAction="MainViewContainer:" id="01P-jW-Vf8"/>
+                            </connections>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5ZK-dx-yN7" customClass="MKTextField" customModule="易泽数码商城">
                             <rect key="frame" x="61" y="7" width="484" height="30"/>
@@ -174,6 +177,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ers-jo-nqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zFB-n6-ftA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2174" y="-77.5"/>
         </scene>

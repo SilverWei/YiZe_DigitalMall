@@ -10,10 +10,28 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var UserNameText: MKTextField!
+    @IBOutlet var UserPasswordText: MKTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        UserNameText.layer.borderColor = UIColor.clearColor().CGColor
+        UserNameText.floatingPlaceholderEnabled = true
+        UserNameText.placeholder = "用户名"
+        UserNameText.tintColor = UIColor.MKColor.Blue
+        UserNameText.rippleLocation = .Right
+        UserNameText.cornerRadius = 0
+        UserNameText.bottomBorderEnabled = true
+        
+        UserPasswordText.layer.borderColor = UIColor.clearColor().CGColor
+        UserPasswordText.floatingPlaceholderEnabled = true
+        UserPasswordText.placeholder = "密码"
+        UserPasswordText.tintColor = UIColor.MKColor.Blue
+        UserPasswordText.rippleLocation = .Right
+        UserPasswordText.cornerRadius = 0
+        UserPasswordText.bottomBorderEnabled = true
 
     }
     

@@ -8,11 +8,11 @@
 
 import UIKit
 
+
 class HomeTableViewController: UITableViewController {
 
     @IBOutlet weak var SearchTextView: MKTextField!
     @IBOutlet var HomeTableView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,5 @@ class HomeTableViewController: UITableViewController {
         return 1
     }
     
-    
-
-
 }
+

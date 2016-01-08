@@ -85,6 +85,9 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="ic_dns" id="qXC-DO-L7M">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="Qee-W7-bZm" kind="unwind" unwindAction="MainViewContainer:" id="QLt-KN-VHa"/>
+                            </connections>
                         </barButtonItem>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="X5T-10-TBY" customClass="MKTextField" customModule="易泽数码商城" customModuleProvider="target">
                             <rect key="frame" x="66" y="7" width="479" height="30"/>
@@ -102,6 +105,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VH7-BP-wuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Qee-W7-bZm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2578" y="488.5"/>
         </scene>
