@@ -57,7 +57,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gN8-yy-Dap" kind="show" id="Tbq-kD-7th"/>
+                                    <segue destination="gN8-yy-Dap" kind="presentation" id="Tbq-kD-7th"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -1,5 +1,5 @@
 //
-//  GenerateOrdersTableViewController.swift
+//  UserCollectTableViewController.swift
 //  		
 //
 //  Created by dmqlMAC on 16/1/8.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GenerateOrdersTableViewController: UITableViewController {
+class UserCollectTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,22 +24,23 @@ class GenerateOrdersTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     @IBAction func CloseViewButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
+
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
+
 
 
 }

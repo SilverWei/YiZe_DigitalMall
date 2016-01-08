@@ -76,7 +76,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="RzE-lo-ZKP" kind="show" id="grX-rp-0mz"/>
+                                            <segue destination="RzE-lo-ZKP" kind="presentation" modalTransitionStyle="flipHorizontal" id="grX-rp-0mz"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -110,7 +110,7 @@
                 <viewControllerPlaceholder storyboardName="GenerateOrders" id="RzE-lo-ZKP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ks-oM-mKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="959"/>
+            <point key="canvasLocation" x="1168" y="960"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iMJ-ag-Rdh">

@@ -41,8 +41,6 @@ class ContainerViewController: UIViewController,MainViewControllerDelegate  {
         addChildViewController(centerNavigationController)
         centerNavigationController.didMoveToParentViewController(self)
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
-        centerNavigationController.view.addGestureRecognizer(panGestureRecognizer)
         
     }
   
@@ -102,33 +100,7 @@ class ContainerViewController: UIViewController,MainViewControllerDelegate  {
         }
     }
     
-    // MARK: Gesture recognizer
-  
-    func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-        let gestureIsDraggingFromLeftToRight = (recognizer.velocityInView(view).x > 0)
-        
-        switch(recognizer.state) {
-        case .Began:
-            if (currentState == .BothCollapsed) {
-                if (gestureIsDraggingFromLeftToRight) {
-                    addLeftPanelViewController()
-                }
-                
-                showShadowForCenterViewController(true)
-            }
-        case .Changed:
-            recognizer.view!.center.x = recognizer.view!.center.x + recognizer.translationInView(view).x
-            recognizer.setTranslation(CGPointZero, inView: view)
-        case .Ended:
-            if (leftViewController != nil) {
-                // animate the side panel open or closed based on whether the view has moved more or less than halfway
-                let hasMovedGreaterThanHalfway = recognizer.view!.center.x > view.bounds.size.width
-                animateLeftPanel(shouldExpand: hasMovedGreaterThanHalfway)
-            }
-        default:
-            break
-        }
-    }
+
 }
 
 

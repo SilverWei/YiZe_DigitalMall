@@ -51,10 +51,12 @@ class HomeTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 4
     }
+    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows

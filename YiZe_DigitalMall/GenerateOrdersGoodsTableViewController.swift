@@ -2,13 +2,13 @@
 //  GenerateOrdersTableViewController.swift
 //  		
 //
-//  Created by dmqlMAC on 16/1/8.
+//  Created by dmqlMAC on 16/1/7.
 //  Copyright © 2016年 dmqlMAC. All rights reserved.
 //
 
 import UIKit
 
-class GenerateOrdersTableViewController: UITableViewController {
+class GenerateOrdersGoodsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +19,16 @@ class GenerateOrdersTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    
+    @IBAction func CloseViewButton(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func CloseViewButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
