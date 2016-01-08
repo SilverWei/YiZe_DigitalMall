@@ -10,6 +10,8 @@ import UIKit
 
 class ShoppingCartTableViewController: UITableViewController {
 
+    var a = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,8 @@ class ShoppingCartTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+
+   //     ShoppingCartTableView.scrollEnabled = false
     }
     
     @IBAction func CloseViewButton(sender: AnyObject) {
@@ -28,6 +32,8 @@ class ShoppingCartTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
 
     // MARK: - Table view data source
 
@@ -38,7 +44,13 @@ class ShoppingCartTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        
+        if(section == 0){ //购物车商品行数
+            return 4
+        }
+        else{
+            return 1
+        }
     }
 
     /*

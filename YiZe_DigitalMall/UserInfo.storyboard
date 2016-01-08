@@ -50,7 +50,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="会员中心" id="DVE-Vx-X9k">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="JOF-qu-5U1">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="ths-Nq-YFx" kind="show" id="Y7x-X1-MWA"/>
                             </connections>

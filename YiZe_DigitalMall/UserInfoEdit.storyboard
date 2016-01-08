@@ -50,13 +50,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="编辑个人资料" id="RHy-Za-cIO">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="Ejw-5i-9O8">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="CloseViewButton:" destination="oyM-iO-xOT" id="RIT-1P-Ts5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="保存" id="RyJ-n3-GCc">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
