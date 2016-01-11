@@ -36,7 +36,6 @@
         <!--Main View Controller-->
         <scene sceneID="8zG-to-xtY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-oS-IdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeViewController" id="TAb-nh-lbe" customClass="MainViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="is8-7O-rOc"/>
@@ -63,6 +62,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Enx-oS-IdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-365" y="407"/>
         </scene>

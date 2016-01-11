@@ -18,8 +18,36 @@ class UserInfoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if(NSUserDefaults.standardUserDefaults().valueForKey("UserID") != nil)
+        {
+            UserInfo()
+            
+            //建立刷新通知
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotif:", name: "ReloadUserInfoView", object: nil)
+        }
+    }
+    
+    func receivedNotif(notification:NSNotification){
+        UserInfo()
+        tableView.setContentOffset(CGPointMake(0, 0), animated: false)
     }
 
+    func UserInfo(){
+        let UserInfo = GetUserInfo(NSUserDefaults.standardUserDefaults().valueForKey("UserID") as! String)
+        let cell = tableView.self as! UserInfoCell
+        cell.User_Name.text = UserInfo?.User_Name
+        cell.User_Mail.text = UserInfo?.User_Mail
+        cell.User_Telephone.text = UserInfo?.User_Telephone
+        cell.User_Address.text = UserInfo?.User_Address
+        cell.User_RealName.text = UserInfo?.User_RealName
+        cell.User_Grade.text = UserInfo?.User_Grade
+        cell.User_Integral.text = UserInfo?.User_Integral
+        cell.User_Image.image = UserInfo!.User_Image != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: UserInfo!.User_Image!)!)!) : nil
+        cell.User_Image.layer.masksToBounds = true
+        cell.User_Image.layer.cornerRadius = 32
+
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,21 +57,24 @@ class UserInfoTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if(section == 0){
-            return 3
-        }
-        if(section == 1){
-            return 2
-        }
-        if(section == 2){
             return 1
         }
+        if(section == 1){
+            return 6
+        }
+        if(section == 2){
+            return 2
+        }
         if(section == 3){
+            return 1
+        }
+        if(section == 4){
             return 1
         }
         else{

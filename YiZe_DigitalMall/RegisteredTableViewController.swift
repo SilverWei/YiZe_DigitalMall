@@ -10,6 +10,12 @@ import UIKit
 
 class RegisteredTableViewController: UITableViewController {
 
+    @IBOutlet var UserName: UITextField!
+    @IBOutlet var UserPassword: UITextField!
+    @IBOutlet var UserRepeatPassword: UITextField!
+    @IBOutlet var UserMail: UITextField!
+    @IBOutlet var UserTelephone: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +26,34 @@ class RegisteredTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func RegisteredIn(sender: AnyObject) {
+        
+        if(UserName.text == "" || UserPassword.text == "" || UserMail.text == "" || UserTelephone.text == ""){
+            ProgressHUD.showError("数据不能为空")
+        }
+        else{
+            if(UserPassword.text == UserRepeatPassword.text)
+            {
+                let UserregisterOut = UserRegister(UserInfo.UserRegisterIn(User_Name: UserName.text, User_Password: UserPassword.text, User_Maill: UserMail.text, User_Telephone: UserTelephone.text))
+                if(UserregisterOut != nil){
+                    if(UserregisterOut?.Code == 4){
+                        NSUserDefaults.standardUserDefaults().setObject(UserregisterOut?.User_ID, forKey: "UserID")
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                        ProgressHUD.showSuccess("注册完成")
+                    }
+                    else{
+                        ProgressHUD.showError("注册失败，可能此用户名已被使用或其他信息有误")
+                    }
+                }
+                else{
+                    ProgressHUD.showError("连接超时")
+                }
+            }
+            else{
+                ProgressHUD.showError("重复密码不一致")
+            }
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,12 +63,12 @@ class RegisteredTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 5
     }
     
     @IBAction func CloseViewButton(sender: AnyObject) {
