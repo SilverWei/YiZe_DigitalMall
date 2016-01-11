@@ -34,17 +34,24 @@ class UserInfoTableViewController: UITableViewController {
 
     func UserInfo(){
         let UserInfo = GetUserInfo(NSUserDefaults.standardUserDefaults().valueForKey("UserID") as! String)
-        let cell = tableView.self as! UserInfoCell
-        cell.User_Name.text = UserInfo?.User_Name
-        cell.User_Mail.text = UserInfo?.User_Mail
-        cell.User_Telephone.text = UserInfo?.User_Telephone
-        cell.User_Address.text = UserInfo?.User_Address
-        cell.User_RealName.text = UserInfo?.User_RealName
-        cell.User_Grade.text = UserInfo?.User_Grade
-        cell.User_Integral.text = UserInfo?.User_Integral
-        cell.User_Image.image = UserInfo!.User_Image != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: UserInfo!.User_Image!)!)!) : nil
-        cell.User_Image.layer.masksToBounds = true
-        cell.User_Image.layer.cornerRadius = 32
+        if(UserInfo?.User_Name != nil){
+            let cell = tableView.self as! UserInfoCell
+            cell.User_Name.text = UserInfo?.User_Name
+            cell.User_Mail.text = UserInfo?.User_Mail
+            cell.User_Telephone.text = UserInfo?.User_Telephone
+            cell.User_Address.text = UserInfo?.User_Address
+            cell.User_RealName.text = UserInfo?.User_RealName
+            cell.User_Grade.text = UserInfo?.User_Grade
+            cell.User_Integral.text = UserInfo?.User_Integral
+            cell.User_Image.image = UserInfo!.User_Image != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: UserInfo!.User_Image!)!)!) : nil
+            cell.User_Image.layer.masksToBounds = true
+            cell.User_Image.layer.cornerRadius = 32
+        }
+        else{
+            NSUserDefaults.standardUserDefaults().setObject("", forKey: "UserID")
+            NSNotificationCenter.defaultCenter().postNotificationName("LoginOrUserInfo", object: nil)
+            ProgressHUD.showError("连接超时，请重新登录")
+        }
 
     }
     

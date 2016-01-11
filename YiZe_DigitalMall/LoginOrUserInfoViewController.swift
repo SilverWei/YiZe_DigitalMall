@@ -17,9 +17,15 @@ class LoginOrUserInfoViewController: UIViewController {
         super.viewDidLoad()
         
         Monitoringloginstatus()
+        //建立刷新通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotif:", name: "LoginOrUserInfo", object: nil)
 
     }
 
+    func receivedNotif(notification:NSNotification){
+        Monitoringloginstatus()
+    }
+    
     func Monitoringloginstatus(){
         if (NSUserDefaults.standardUserDefaults().valueForKey("UserID") != nil){
             if((NSUserDefaults.standardUserDefaults().valueForKey("UserID")) as! String != ""){
