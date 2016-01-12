@@ -24,7 +24,7 @@ class ContainerViewController: UIViewController,MainViewControllerDelegate  {
             showShadowForCenterViewController(shouldShowShadow)
         }
     }
-    var leftViewController: SortTableViewController?
+    var leftViewController: UINavigationController?
     let centerPanelExpandedOffset: CGFloat = 60
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class ContainerViewController: UIViewController,MainViewControllerDelegate  {
         }
     }
     
-    func addChildSidePanelController(sidePanelController: SortTableViewController) {
+    func addChildSidePanelController(sidePanelController: UINavigationController) {
         view.insertSubview(sidePanelController.view, atIndex: 0)
         
         addChildViewController(sidePanelController)
@@ -107,8 +107,8 @@ class ContainerViewController: UIViewController,MainViewControllerDelegate  {
 private extension UIStoryboard {
     class func HomeStoryboard() -> UIStoryboard { return UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()) }
     
-    class func leftViewController() -> SortTableViewController? {
-        return HomeStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? SortTableViewController
+    class func leftViewController() -> UINavigationController? {
+        return HomeStoryboard().instantiateViewControllerWithIdentifier("LeftViewController") as? UINavigationController
     }
     
     class func mainViewController() -> MainViewController? {

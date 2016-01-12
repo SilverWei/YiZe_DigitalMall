@@ -12,6 +12,8 @@ class SearchTableViewController: UITableViewController {
 
     @IBOutlet weak var SearchTextView: MKTextField!
     @IBOutlet var SearchTableView: UITableView!
+    @IBOutlet var SortViewButton: UIBarButtonItem!
+    @IBOutlet var SortSearchCloseButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +23,35 @@ class SearchTableViewController: UITableViewController {
         SearchTextView.backgroundColor = UIColor.grayColor()
         SearchTextView.tintColor = UIColor.whiteColor()
         
+        //隐藏分类关闭按钮
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.leftBarButtonItem = SortViewButton
+        
         //下拉刷新
         self.SearchTableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "print1")
         
+        //建立刷新通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotif:", name: "SearchTabBarView", object: nil)
+        
+        
+    }
+    
+    func receivedNotif(notification:NSNotification){
+        SortSearchCome()
+    }
+    
+    //显示分类搜索
+    func SortSearchCome(){
+        self.navigationItem.leftBarButtonItem = SortSearchCloseButton
     }
     
     func print1(){
         self.SearchTableView.header.endRefreshing()
     }
 
+    @IBAction func SortSearchCloseButtonClick(sender: AnyObject) {
+        self.navigationItem.leftBarButtonItem = SortViewButton
+    }
     //上拉隐藏navigationBar动画
     override func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         

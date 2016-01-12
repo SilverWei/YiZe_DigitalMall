@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="93f-Ap-5hK">
             <objects>
-                <tabBarController id="FVV-qk-CRG" sceneMemberID="viewController">
+                <tabBarController id="FVV-qk-CRG" customClass="MainTabBarViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="tz6-hq-O3r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

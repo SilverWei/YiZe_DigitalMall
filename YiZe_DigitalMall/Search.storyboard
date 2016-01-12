@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--搜索-->
@@ -43,7 +44,7 @@
             <objects>
                 <tableViewController id="GB5-u3-Qyf" customClass="SearchTableViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eVe-t1-7h3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -83,14 +84,22 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="2Ik-vn-Ihc">
                         <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="ic_dns" id="qXC-DO-L7M">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="Qee-W7-bZm" kind="unwind" unwindAction="MainViewContainer:" id="QLt-KN-VHa"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem image="ic_dns" id="qXC-DO-L7M">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Qee-W7-bZm" kind="unwind" unwindAction="MainViewContainer:" id="QLt-KN-VHa"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="stop" id="Qnf-79-ZBA">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="SortSearchCloseButtonClick:" destination="GB5-u3-Qyf" id="aei-5c-dbf"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                         <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="X5T-10-TBY" customClass="MKTextField" customModule="易泽数码商城" customModuleProvider="target">
-                            <rect key="frame" x="66" y="7" width="479" height="30"/>
+                            <rect key="frame" x="108" y="7" width="437" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -102,6 +111,8 @@
                     <connections>
                         <outlet property="SearchTableView" destination="eVe-t1-7h3" id="1MD-cY-4Ap"/>
                         <outlet property="SearchTextView" destination="X5T-10-TBY" id="E4a-Bd-7Kl"/>
+                        <outlet property="SortSearchCloseButton" destination="Qnf-79-ZBA" id="IH2-Lm-aAR"/>
+                        <outlet property="SortViewButton" destination="qXC-DO-L7M" id="bsf-bv-w4I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VH7-BP-wuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -142,12 +153,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ve0-0z-rG1">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <connections>
-                                    <segue destination="Lab-P7-ci3" kind="embed" id="8rE-wp-ukB"/>
-                                </connections>
-                            </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJz-DT-fxK" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
                                 <rect key="frame" x="540" y="491" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.74509803919999995" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,10 +169,16 @@
                                     <segue destination="a7b-kj-wrc" kind="presentation" id="hZ7-2W-pd8"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ve0-0z-rG1">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <connections>
+                                    <segue destination="Lab-P7-ci3" kind="embed" id="8rE-wp-ukB"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ve0-0z-rG1" firstAttribute="top" secondItem="BeE-bU-7Wo" secondAttribute="top" id="8Fn-Rc-up7"/>
+                            <constraint firstItem="ve0-0z-rG1" firstAttribute="top" secondItem="ZDo-Vt-Dg3" secondAttribute="bottom" id="Cbb-P6-2D8"/>
                             <constraint firstItem="xzg-XZ-gn2" firstAttribute="top" secondItem="gJz-DT-fxK" secondAttribute="bottom" constant="10" id="MiU-dv-d99"/>
                             <constraint firstAttribute="trailing" secondItem="ve0-0z-rG1" secondAttribute="trailing" id="SD4-HP-00D"/>
                             <constraint firstAttribute="trailing" secondItem="gJz-DT-fxK" secondAttribute="trailing" constant="10" id="Xey-aB-DuV"/>

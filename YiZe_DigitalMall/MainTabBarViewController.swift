@@ -1,38 +1,28 @@
 //
-//  MainViewController.swift
+//  MainTabBarViewController.swift
 //  		
 //
-//  Created by dmqlMAC on 16/1/8.
+//  Created by dmqlMAC on 16/1/12.
 //  Copyright © 2016年 dmqlMAC. All rights reserved.
 //
 
 import UIKit
 
-@objc
-protocol MainViewControllerDelegate {
-    optional func toggleLeftPanel()
-    optional func collapseSidePanels()
-}
+class MainTabBarViewController: UITabBarController {
 
-class MainViewController: UIViewController {
-    
-    var delegate: MainViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-    }
-
-    @IBAction func MainViewContainer(segue:UIStoryboardSegue){
-        delegate?.toggleLeftPanel?()
+        //建立刷新通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotif:", name: "MainTabBarView", object: nil)
+        
+        
     }
     
-    
-    @IBAction func Sort2ndTableViewCellClick(segue:UIStoryboardSegue){
-        delegate?.toggleLeftPanel?()
-        NSNotificationCenter.defaultCenter().postNotificationName("MainTabBarView", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("SearchTabBarView", object: nil)
+    func receivedNotif(notification:NSNotification){
+        self.selectedIndex = 1
     }
     
     
