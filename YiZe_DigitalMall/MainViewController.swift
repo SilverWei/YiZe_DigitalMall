@@ -22,6 +22,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        NSUserDefaults.standardUserDefaults().setObject(0, forKey: "SortSelectTrue")
     }
 
     @IBAction func MainViewContainer(segue:UIStoryboardSegue){
@@ -33,8 +35,8 @@ class MainViewController: UIViewController {
         delegate?.toggleLeftPanel?()
         NSNotificationCenter.defaultCenter().postNotificationName("MainTabBarView", object: nil)
         NSNotificationCenter.defaultCenter().postNotificationName("SearchTabBarView", object: nil)
+        NSUserDefaults.standardUserDefaults().setObject(1, forKey: "SortSelectTrue")
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

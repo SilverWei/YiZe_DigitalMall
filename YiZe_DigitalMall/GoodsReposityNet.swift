@@ -65,3 +65,34 @@ func GetSort2ndSub(GoodsCategory_ID:String) -> [GoodsSort2nd]?
     }
     return GetSort2ndGet
 }
+
+func SearchInfo(SearchInfoInGet:SearchInfoIn) -> [SearchInfoOut]?
+{
+    var SearchInfoOutGet = [SearchInfoOut]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "Search.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "Goods_Name": SearchInfoInGet.Goods_Name! as String,
+            "GoodsSubCategory_ID": SearchInfoInGet.GoodsSort2nd_ID! as String
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                SearchInfoOutGet.append(SearchInfoOut(Goods_ID: json[i]["Goods_ID"].stringValue, Goods_Name: json[i]["Goods_Name"].stringValue, Goods_Image: json[i]["Goods_Image"] != nil ? BaseUrlImg + json[i]["Goods_Image"].string! : "", Goods_MarketPrice: json[i]["Goods_MarketPrice"].stringValue, Goods_MemberPrice: json[i]["Goods_MemberPrice"].stringValue))
+            }
+        }
+        else{
+            return nil
+        }
+    }
+    return SearchInfoOutGet
+}

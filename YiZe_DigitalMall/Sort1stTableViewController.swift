@@ -61,6 +61,7 @@ class Sort1stTableViewController: UITableViewController {
             if let indexPath = self.tableView.indexPathForSelectedRow
             {
                 (segue.destinationViewController as! Sort2ndTableViewController).Sort1stCellId = Sort1stAll![indexPath.row].GoodsSort1st_ID
+                (segue.destinationViewController as! Sort2ndTableViewController).Sort1stCellName = Sort1stAll![indexPath.row].GoodsSort1st_Name
             }
         }
     }

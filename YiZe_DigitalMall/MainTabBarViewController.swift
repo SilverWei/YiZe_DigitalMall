@@ -10,6 +10,7 @@ import UIKit
 
 class MainTabBarViewController: UITabBarController {
 
+    var HomeSearchName:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +27,17 @@ class MainTabBarViewController: UITabBarController {
     }
     
     
+    @IBAction func HomeSearchButtonClick(segue:UIStoryboardSegue){
+        
+        NSUserDefaults.standardUserDefaults().setObject(HomeSearchName, forKey: "HomeSearchName")
+        NSNotificationCenter.defaultCenter().postNotificationName("SearchTabBarView", object: nil)
+        self.selectedIndex = 1
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

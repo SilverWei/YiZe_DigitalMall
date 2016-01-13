@@ -18,7 +18,7 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
 
         SearchTextView.layer.borderColor = UIColor.clearColor().CGColor
-        SearchTextView.placeholder = "搜索商品..."
+        SearchTextView.placeholder = "搜索商品:"
         SearchTextView.backgroundColor = UIColor.grayColor()
         SearchTextView.tintColor = UIColor.whiteColor()
 
@@ -61,6 +61,16 @@ class HomeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
+    }
+    
+    
+    //页面对外接口
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "HomeSearchButtonClick"
+        {
+            (segue.destinationViewController as! MainTabBarViewController).HomeSearchName = SearchTextView.text
+            SearchTextView.text = ""
+        }
     }
     
 }

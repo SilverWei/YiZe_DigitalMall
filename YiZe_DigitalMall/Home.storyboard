@@ -161,7 +161,7 @@
                                 <segue destination="zFB-n6-ftA" kind="unwind" unwindAction="MainViewContainer:" id="01P-jW-Vf8"/>
                             </connections>
                         </barButtonItem>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="5ZK-dx-yN7" customClass="MKTextField" customModule="易泽数码商城">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="5ZK-dx-yN7" customClass="MKTextField" customModule="易泽数码商城">
                             <rect key="frame" x="61" y="7" width="484" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -169,6 +169,9 @@
                         </textField>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="JHo-n2-rXt">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="zFB-n6-ftA" kind="unwind" identifier="HomeSearchButtonClick" unwindAction="HomeSearchButtonClick:" id="1Bz-zP-teD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -185,7 +188,7 @@
         <scene sceneID="iwn-T0-84g">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRm-zO-z6H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="ic_local_grocery_store_white_36pt" id="AS5-Sa-ohb"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="ic_home_white" id="AS5-Sa-ohb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="G1Q-d1-dmn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -208,6 +211,7 @@
     </scenes>
     <resources>
         <image name="ic_dns" width="24" height="24"/>
+        <image name="ic_home_white" width="24" height="24"/>
         <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
     </resources>
 </document>

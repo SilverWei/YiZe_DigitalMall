@@ -10,7 +10,9 @@ import UIKit
 
 class Sort2ndTableViewController: UITableViewController {
 
+    @IBOutlet var Sort2ndTitleText: UILabel!
     var Sort1stCellId:String = ""
+    var Sort1stCellName:String = ""
     
     var Sort2ndAll:[GoodsSort2nd]?
     
@@ -22,7 +24,8 @@ class Sort2ndTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
+        
+        Sort2ndLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,12 +38,14 @@ class Sort2ndTableViewController: UITableViewController {
         if(Sort2ndAll == nil){
             ProgressHUD.showError("连接超时")
         }
+        
+        Sort2ndTitleText.text = "< " + Sort1stCellName
     }
 
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Sort1stCellView", forIndexPath: indexPath) as! Sort2ndCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Sort2ndCellView", forIndexPath: indexPath) as! Sort2ndCell
         cell.Sort2ndName.text = Sort2ndAll![indexPath.row].GoodsSort2nd_Name
         cell.Sort2ndId.text = Sort2ndAll![indexPath.row].GoodsSort2nd_ID
         return cell
@@ -53,9 +58,22 @@ class Sort2ndTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (Sort2ndAll?.count)!
+        return Sort2ndAll?.count != nil ? (Sort2ndAll?.count)! : 0
     }
 
+    //页面对外接口
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "Sort2ndCellClick"
+        {
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                
+                NSUserDefaults.standardUserDefaults().setObject(Sort2ndAll![indexPath.row].GoodsSort2nd_ID, forKey: "SortSelect2ndId")
+                NSUserDefaults.standardUserDefaults().setObject(Sort2ndAll![indexPath.row].GoodsSort2nd_Name, forKey: "SortSelect2ndName")
+                
+            }
+        }
+    }
 
 
 }

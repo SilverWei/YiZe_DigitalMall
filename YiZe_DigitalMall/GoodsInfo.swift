@@ -36,3 +36,29 @@ class GetGoodsInfo: NSObject {
         self.Goods_Recommend = Goods_Recommend
     }
 }
+
+class SearchInfoIn:NSObject{
+    var Goods_Name:String?
+    var GoodsSort2nd_ID:String?
+    
+    init(Goods_Name:String?, GoodsSort2nd_ID:String?) {
+        self.Goods_Name = Goods_Name
+        self.GoodsSort2nd_ID = GoodsSort2nd_ID
+    }
+}
+
+class SearchInfoOut:NSObject{
+    var Goods_ID:String?
+    var Goods_Name:String?
+    var Goods_Image:String?
+    var Goods_MarketPrice:String?
+    var Goods_MemberPrice:String?
+    
+    init(Goods_ID:String?, Goods_Name:String?, Goods_Image:String?, Goods_MarketPrice:String?, Goods_MemberPrice:String?) {
+        self.Goods_ID = Goods_ID
+        self.Goods_Name = Goods_Name
+        self.Goods_Image = Goods_Image
+        self.Goods_MarketPrice = Goods_MarketPrice
+        self.Goods_MemberPrice = Goods_MemberPrice
+    }
+}

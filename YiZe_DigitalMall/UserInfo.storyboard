@@ -465,7 +465,7 @@
                             <constraint firstItem="FDL-Se-WG6" firstAttribute="top" secondItem="4lt-bX-inE" secondAttribute="bottom" id="twD-hd-cDs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="会员" image="ic_local_grocery_store_white_36pt" id="4eg-kD-J27"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="会员" image="ic_account_box_white" id="4eg-kD-J27"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="LoginView" destination="FDL-Se-WG6" id="Auq-Zv-mLN"/>
@@ -503,6 +503,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
+        <image name="ic_account_box_white" width="24" height="24"/>
     </resources>
 </document>
