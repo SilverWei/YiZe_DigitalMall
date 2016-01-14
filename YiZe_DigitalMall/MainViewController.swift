@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         NSUserDefaults.standardUserDefaults().setObject(0, forKey: "SortSelectTrue")
+
     }
 
     @IBAction func MainViewContainer(segue:UIStoryboardSegue){

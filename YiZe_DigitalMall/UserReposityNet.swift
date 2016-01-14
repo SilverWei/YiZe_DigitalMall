@@ -96,8 +96,8 @@ func GetUserInfo(User_Id:String) -> UserInfo.GetUserInfo?
             GetUserInfo = UserInfo.GetUserInfo(
                 User_Name: json["User_Name"].string,
                 User_Mail: json["User_Maill"].string,
-                User_Address: json["User_Telephone"].string,
-                User_Telephone: json["User_Address"].string,
+                User_Address: json["User_Address"].string,
+                User_Telephone: json["User_Telephone"].string,
                 User_RealName: json["RealName"].string,
                 User_Grade: json["User_Grade"].string,
                 User_Integral: json["User_Integral"].string,
@@ -109,4 +109,100 @@ func GetUserInfo(User_Id:String) -> UserInfo.GetUserInfo?
         }
     }
     return GetUserInfo
+}
+
+func UpUserInfo(UpUserInfoIn:UserInfo.UpUserInfoIn) -> UserInfo.UpUserInfoOut?
+{
+    var UpUserInfoOut:UserInfo.UpUserInfoOut?
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "UpUserInfo.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        
+        let param = [
+            "User_ID": UpUserInfoIn.User_ID! as String,
+            "User_Maill": UpUserInfoIn.User_Mail! as String,
+            "User_Telephone": UpUserInfoIn.User_Telephone! as String,
+            "User_Address": UpUserInfoIn.User_Address! as String,
+            "RealName": UpUserInfoIn.User_RealName! as String,
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            UpUserInfoOut = UserInfo.UpUserInfoOut(User_ID: json["User_ID"].string, Code: json["Code"].int)
+        }
+        else{
+            return nil
+        }
+    }
+    return UpUserInfoOut
+}
+
+
+func GetLikeGoodsOut(User_ID:String) -> [GetLikeGoods]?
+{
+    var GetLikeGoodsAll = [GetLikeGoods]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetLikeGoods.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID": User_ID
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                GetLikeGoodsAll.append(GetLikeGoods(LikeGoods_ID: json[i]["LikeGoods_ID"].string, Like_ID: json[i]["Like_ID"].string))
+            }
+            
+        }
+        else{
+            return nil
+        }
+    }
+    return GetLikeGoodsAll
+}
+
+func LikeGoodsYesOrNo(User_ID:String, Goods_ID:String) -> Int
+{
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetLikeGoods.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID": User_ID
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                if(json[i]["Like_ID"].string == Goods_ID){
+                    return 1
+                }
+            }
+            
+        }
+        else{
+            return 0
+        }
+    }
+    return 0
 }

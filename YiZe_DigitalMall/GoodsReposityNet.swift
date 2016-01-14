@@ -66,6 +66,66 @@ func GetSort2ndSub(GoodsCategory_ID:String) -> [GoodsSort2nd]?
     return GetSort2ndGet
 }
 
+func GetSort1stName(Sort1stId:String) -> String?
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetGoodsType.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            
+            for i in 0..<json.count{
+                //Do something you want
+                if(json[i]["GoodsCategory_ID"].stringValue == Sort1stId){
+                    return json[i]["GoodsCategory_Name"].stringValue
+                }
+            }
+        }
+        else{
+            return nil
+        }
+    }
+    return nil
+}
+
+func GetSort2ndName(Sort1stId:String, Sort2ndId:String) -> String?
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetGoodsSubType.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "GoodsCategory_ID": Sort1stId
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            
+            for i in 0..<json.count{
+                //Do something you want
+                if(json[i]["GoodsSubCategory_ID"].stringValue == Sort2ndId){
+                    return json[i]["GoodsSubCategory_Name"].stringValue
+                }
+            }
+        }
+        else{
+            return nil
+        }
+    }
+    return nil
+}
+
 func SearchInfo(SearchInfoInGet:SearchInfoIn) -> [SearchInfoOut]?
 {
     var SearchInfoOutGet = [SearchInfoOut]()
@@ -95,4 +155,46 @@ func SearchInfo(SearchInfoInGet:SearchInfoIn) -> [SearchInfoOut]?
         }
     }
     return SearchInfoOutGet
+}
+
+func GoodsInfoOut(GoodsId:String) -> GetGoodsInfo?
+{
+    var GetGoodsInfoGet:GetGoodsInfo?
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetGoodsInfo.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "Goods_ID": GoodsId
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            GetGoodsInfoGet = GetGoodsInfo(
+                Goods_ID: json["Goods_ID"].string!,
+                Goods_Name: json["Goods_Name"].string!,
+                Goods_Image: json["Goods_Image"] != nil ? BaseUrlImg + json["Goods_Image"].string! : "",
+                Goods_MarketPrice: json["Goods_MarketPrice"].string!,
+                Goods_MemberPrice: json["Goods_MemberPrice"].string!,
+                Goods_InventoryNumber: json["Goods_InventoryNumber"].string!,
+                Goods_Score: json["Goods_Score"].string!,
+                Goods_PurchaseIntegral: json["Goods_PurchaseIntegral"].string!,
+                Goods_Introduction: json["Goods_Introduction"].string!,
+                Goods_Recommend: json["Goods_Recommend"].string!,
+                Goods_Time: json["Goods_Time"].string!,
+                Goods_Sort1: json["Goods_Spare1"].string!,
+                Goods_Sort2: json["Goods_Spare2"].string!,
+                Goods_RecommendTime: json["Goods_RecommendTime"].string!
+            )
+        }
+        else{
+            return nil
+        }
+    }
+    return GetGoodsInfoGet
 }

@@ -107,7 +107,7 @@
                                     <outlet property="GoodsMarketPrice" destination="61S-1P-Yxc" id="v9h-nd-fPd"/>
                                     <outlet property="GoodsMemberPrice" destination="v1C-jF-x7f" id="llA-R9-Ulb"/>
                                     <outlet property="GoodsName" destination="k4h-LJ-rZV" id="uRS-qM-ud4"/>
-                                    <segue destination="KMd-J5-omP" kind="show" id="N8b-1T-grA"/>
+                                    <segue destination="KMd-J5-omP" kind="presentation" identifier="ShowGoodsInfo" id="N8b-1T-grA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -164,7 +164,7 @@
                 <viewControllerPlaceholder storyboardName="GoodsInfo" id="KMd-J5-omP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23Y-g3-jCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2578" y="896"/>
+            <point key="canvasLocation" x="2578" y="899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lB9-M4-nbM">

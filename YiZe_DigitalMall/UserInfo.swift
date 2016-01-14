@@ -34,6 +34,32 @@ class UserInfo{
         }
     }
     
+    internal class UpUserInfoIn: NSObject{
+        var User_ID:String?
+        var User_Mail:String?
+        var User_Telephone:String?
+        var User_Address:String?
+        var User_RealName:String?
+        
+        init(User_ID:String?, User_Mail:String?, User_Telephone:String?, User_Address:String?, User_RealName:String?) {
+            self.User_ID = User_ID
+            self.User_Mail = User_Mail
+            self.User_Telephone = User_Telephone
+            self.User_Address = User_Address
+            self.User_RealName = User_RealName
+        }
+    }
+    
+    internal class UpUserInfoOut: NSObject{
+        var User_ID:String?
+        var Code:Int?
+
+        init(User_ID:String? ,Code:Int?) {
+            self.User_ID = User_ID
+            self.Code = Code
+        }
+    }
+    
     internal class UserLoginIn:NSObject{
         var User_Name:String?
         var User_Password:String?
@@ -76,7 +102,16 @@ class UserInfo{
             self.Code = Code
         }
     }
-    
-    
 }
+
+class GetLikeGoods:NSObject{
+    var LikeGoods_ID:String?
+    var Like_ID:String?
+    
+    init(LikeGoods_ID:String?, Like_ID:String?) {
+        self.LikeGoods_ID = LikeGoods_ID
+        self.Like_ID = Like_ID
+    }
+}
+
 

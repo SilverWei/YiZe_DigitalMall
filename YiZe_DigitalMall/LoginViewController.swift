@@ -12,6 +12,10 @@ class LoginViewController: UIViewController {
 
     @IBOutlet var UserNameText: MKTextField!
     @IBOutlet var UserPasswordText: MKTextField!
+    @IBOutlet var LoginButton: MKButton!
+    @IBOutlet var RegisteredButton: MKButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,6 +36,16 @@ class LoginViewController: UIViewController {
         UserPasswordText.rippleLocation = .Right
         UserPasswordText.cornerRadius = 0
         UserPasswordText.bottomBorderEnabled = true
+        
+        LoginButton.layer.shadowOpacity = 0.55
+        LoginButton.layer.shadowRadius = 5.0
+        LoginButton.layer.shadowColor = UIColor.grayColor().CGColor
+        LoginButton.layer.shadowOffset = CGSize(width: 0, height: 2.5)
+        
+        RegisteredButton.layer.shadowOpacity = 0.55
+        RegisteredButton.layer.shadowRadius = 5.0
+        RegisteredButton.layer.shadowColor = UIColor.grayColor().CGColor
+        RegisteredButton.layer.shadowOffset = CGSize(width: 0, height: 2.5)
 
     }
     

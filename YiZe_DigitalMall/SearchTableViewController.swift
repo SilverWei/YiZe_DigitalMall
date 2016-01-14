@@ -29,7 +29,6 @@ class SearchTableViewController: UITableViewController {
         SearchTextView.backgroundColor = UIColor.grayColor()
         SearchTextView.textColor = UIColor.whiteColor()
 
-        
         //隐藏分类关闭按钮,判断是否分类搜索
         self.navigationItem.leftBarButtonItem = nil
         if(NSUserDefaults.standardUserDefaults().valueForKey("SortSelectTrue") as! Int == 0 && NSUserDefaults.standardUserDefaults().valueForKey("HomeSearchName") == nil){
@@ -93,7 +92,6 @@ class SearchTableViewController: UITableViewController {
             ProgressHUD.showSuccess("刷新完成")
         }
         
-        
     }
 
     func SearchShow(){
@@ -142,6 +140,7 @@ class SearchTableViewController: UITableViewController {
         if(GoodsInfoAll?.count < 1){
             ProgressHUD.showError("没有相关产品")
         }
+        
     }
     
     //点击搜索按钮事件
@@ -156,6 +155,7 @@ class SearchTableViewController: UITableViewController {
        if(GoodsInfoAll?.count < 1){
             ProgressHUD.showError("没有相关产品")
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -167,18 +167,25 @@ class SearchTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchGoodsCellView", forIndexPath: indexPath) as! SearchGoodsCell
+        
         cell.GoodsName.text = GoodsInfoAll![indexPath.row].Goods_Name
         cell.GoodsMarketPrice.attributedText = NSAttributedString(string: "￥" + GoodsInfoAll![indexPath.row].Goods_MarketPrice!, attributes: [NSStrikethroughStyleAttributeName:1])
         cell.GoodsMemberPrice.text = "￥" + GoodsInfoAll![indexPath.row].Goods_MemberPrice!
         cell.GoodsImage.image = GoodsInfoAll![indexPath.row].Goods_Image != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: GoodsInfoAll![indexPath.row].Goods_Image!)!)!) : nil
         return cell
     }
+    
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        
+        return 1
+    }
+
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+
         if(GoodsInfoAll?.count >= 1){
-            return GoodsInfoAll!.count
+            return (GoodsInfoAll?.count)!
         }
         else{
             self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
@@ -187,15 +194,21 @@ class SearchTableViewController: UITableViewController {
             label.textAlignment = NSTextAlignment.Center
             label.textColor = UIColor.lightGrayColor()
             self.tableView.backgroundView = label
+            
         }
         return 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 1
+    //页面对外接口
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowGoodsInfo"
+        {
+            if let indexPath = self.SearchTableView.indexPathForSelectedRow
+            {
+                NSUserDefaults.standardUserDefaults().setObject(GoodsInfoAll![indexPath.row].Goods_ID!, forKey: "GoodsInfoId")
+                NSNotificationCenter.defaultCenter().postNotificationName("GoodsInfoView", object: nil)
+            }
+        }
     }
-
-
 
 }
