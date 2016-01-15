@@ -48,9 +48,9 @@ class UserInfoTableViewController: UITableViewController {
             cell.User_Image.layer.cornerRadius = 32
         }
         else{
-            NSUserDefaults.standardUserDefaults().setObject("", forKey: "UserID")
+            NSUserDefaults.standardUserDefaults().setObject(nil, forKey: "UserID")
             NSNotificationCenter.defaultCenter().postNotificationName("LoginOrUserInfo", object: nil)
-            ProgressHUD.showError("连接超时，请重新登录")
+        //    ProgressHUD.showError("连接超时，请重新登录")
         }
 
     }

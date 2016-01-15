@@ -95,23 +95,36 @@
                                                         <action selector="ShoppingCartClick:" destination="Plx-6X-Rte" eventType="touchUpInside" id="h8M-yY-eyH"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJa-SI-7ep" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
+                                                    <rect key="frame" x="328" y="8" width="245" height="32"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <state key="normal" title="已放入购物车"/>
+                                                    <connections>
+                                                        <action selector="ShoppingCartClick:" destination="Plx-6X-Rte" eventType="touchUpInside" id="3zP-S4-ohb"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="top" secondItem="Ga7-SM-cBd" secondAttribute="topMargin" id="7Zs-vq-V44"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="leading" secondItem="Ga7-SM-cBd" secondAttribute="leadingMargin" constant="20" id="8Af-57-2sw"/>
+                                                <constraint firstItem="uJa-SI-7ep" firstAttribute="trailing" secondItem="Atk-t2-x4B" secondAttribute="trailing" id="9xA-mA-nRy"/>
                                                 <constraint firstItem="WcD-31-4ql" firstAttribute="height" secondItem="T7O-Zp-mSz" secondAttribute="height" id="AGb-RP-14s"/>
                                                 <constraint firstItem="Atk-t2-x4B" firstAttribute="centerX" secondItem="Ga7-SM-cBd" secondAttribute="centerX" multiplier="1.5" id="GEc-AK-MGq"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="centerX" secondItem="Ga7-SM-cBd" secondAttribute="centerX" multiplier="0.5" id="NHP-th-Uj5"/>
+                                                <constraint firstItem="uJa-SI-7ep" firstAttribute="leading" secondItem="Atk-t2-x4B" secondAttribute="leading" id="OD6-kF-Hvn"/>
                                                 <constraint firstItem="Atk-t2-x4B" firstAttribute="top" secondItem="Ga7-SM-cBd" secondAttribute="topMargin" id="ROC-Yw-Oxu"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="trailing" secondItem="WcD-31-4ql" secondAttribute="trailing" id="SRt-sE-tj2"/>
                                                 <constraint firstItem="Atk-t2-x4B" firstAttribute="width" secondItem="T7O-Zp-mSz" secondAttribute="width" id="ZNv-AR-HAL"/>
+                                                <constraint firstItem="uJa-SI-7ep" firstAttribute="bottom" secondItem="Atk-t2-x4B" secondAttribute="bottom" id="f0g-ib-KkO"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="bottom" secondItem="WcD-31-4ql" secondAttribute="bottom" id="gWG-Hl-v04"/>
                                                 <constraint firstItem="WcD-31-4ql" firstAttribute="width" secondItem="T7O-Zp-mSz" secondAttribute="width" id="ggt-P4-Lld"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="leading" secondItem="WcD-31-4ql" secondAttribute="leading" id="ksc-tc-Yvj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Atk-t2-x4B" secondAttribute="bottom" id="ldf-Px-zXr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="T7O-Zp-mSz" secondAttribute="bottom" id="m9q-bm-vGN"/>
                                                 <constraint firstItem="T7O-Zp-mSz" firstAttribute="top" secondItem="WcD-31-4ql" secondAttribute="top" id="n56-tu-P48"/>
+                                                <constraint firstItem="uJa-SI-7ep" firstAttribute="top" secondItem="Atk-t2-x4B" secondAttribute="top" id="vP4-bB-Z7j"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -317,6 +330,7 @@
                         <outlet property="Goods_PurchaseIntegral" destination="APH-7d-qku" id="dym-Bi-OaE"/>
                         <outlet property="Goods_Sort" destination="AE0-0M-9wR" id="IsM-WM-gyO"/>
                         <outlet property="Goods_Time" destination="670-5S-JQZ" id="Zzg-Ep-UZw"/>
+                        <outlet property="UnAddToCart" destination="uJa-SI-7ep" id="dzm-Id-96q"/>
                         <outlet property="UnCollectButton" destination="WcD-31-4ql" id="g7i-bx-ayA"/>
                     </connections>
                 </tableViewController>

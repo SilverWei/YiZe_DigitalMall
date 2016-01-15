@@ -24,6 +24,7 @@ class GoodsInfoTableViewController: UITableViewController {
     @IBOutlet var CollectButton: MKButton!  
     @IBOutlet var UnCollectButton: MKButton!
     @IBOutlet var AddToCart: MKButton!
+    @IBOutlet var UnAddToCart: MKButton!
     
     var GoodsInfoId:String = ""
     var GoodsInfo:GetGoodsInfo?
@@ -97,6 +98,13 @@ class GoodsInfoTableViewController: UITableViewController {
             }
             else{
                 UnCollectButton.hidden = true
+            }
+            
+            if(ShoppingCartHaveYes("20151210132034939045", ShoppingCart_ID: GoodsInfoId) == 1){
+                AddToCart.hidden = true
+            }
+            else{
+                UnAddToCart.hidden = true
             }
 
         }

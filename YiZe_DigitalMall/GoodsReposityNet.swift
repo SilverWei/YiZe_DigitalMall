@@ -280,3 +280,59 @@ func GetHotGoods() -> [SearchInfoOut]?
     return GetHotGoodsAll
 }
 
+func GetShoppingCart(User_ID:String) -> [ShoppingCart]?
+{
+    var GetShoppingCart = [ShoppingCart]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetShoppingCart.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID": User_ID
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                GetShoppingCart.append(ShoppingCart(Goods_ID: json[i]["Goods_ID"].stringValue, User_ID: json[i]["User_ID"].stringValue, ShoppingCart_ID: json[i]["Shopping_ID"].stringValue, Goods_Quantity: json[i]["Shopping_Number"].stringValue))
+            }
+        }
+        else{
+            return nil
+        }
+    }
+    return GetShoppingCart
+}
+
+func ShoppingCartHaveYes(User_ID:String, ShoppingCart_ID: String) -> Int
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetShoppingCart.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID": User_ID
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                if(json[i]["Goods_ID"].stringValue == ShoppingCart_ID){
+                    return 1
+                }
+            }
+        }
+    }
+    return 0
+}
+

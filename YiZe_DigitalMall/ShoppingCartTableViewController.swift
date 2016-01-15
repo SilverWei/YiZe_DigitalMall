@@ -9,34 +9,78 @@
 import UIKit
 
 class ShoppingCartTableViewController: UITableViewController {
-
-    var a = 0
+    
+    var ShoppingCartAll = [ShoppingCart]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
-   //     ShoppingCartTableView.scrollEnabled = false
+        ShoppingCartRefresh()
+    }
+    
+    func ShoppingCartRefresh(){
+        ShoppingCartAll = GetShoppingCart("20151210132034939045")!
+        self.tableView.reloadData()
     }
     
     @IBAction func CloseViewButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func QuantityEditClick(sender: AnyObject) {
+        print(sender.tag)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
 
     // MARK: - Table view data source
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let section = indexPath.section
+        
+        if(section == 0){
+            return 105
+        }
+        else{
+            return 44
+        }
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let section = indexPath.section
+        
+        if(section == 0){
+            let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartCellView", forIndexPath: indexPath) as! ShoppingCartCell
+            
+            let GoodsInfo:GetGoodsInfo = GoodsInfoOut(ShoppingCartAll[indexPath.row].Goods_ID!)!
+            cell.GoodsName.text = GoodsInfo.Goods_Name
+            cell.GoodsMemberPrice.text = "￥" + GoodsInfo.Goods_MemberPrice!
+            cell.GoodsImage.image = GoodsInfo.Goods_Image != "" ? UIImage(data: NSData(contentsOfURL: NSURL(string: GoodsInfo.Goods_Image!)!)!) : nil
+            cell.GoodsQuantity.text = ShoppingCartAll[indexPath.row].Goods_Quantity! + "个"
+            cell.GoodsQuantityButton.tag = indexPath.row
+            cell.GoodsQuantityButton.layer.shadowOpacity = 0.55
+            cell.GoodsQuantityButton.layer.shadowRadius = 5.0
+            cell.GoodsQuantityButton.layer.shadowColor = UIColor.grayColor().CGColor
+            cell.GoodsQuantityButton.layer.shadowOffset = CGSize(width: 0, height: 2.5)
+            return cell
+        }
+        else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("ShoppingCartToOrderClick", forIndexPath: indexPath)
+            
+            return cell
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "从购物车删除"
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        print("!")
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
@@ -44,68 +88,35 @@ class ShoppingCartTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-        if(section == 0){ //购物车商品行数
-            return 4
+        if(ShoppingCartAll.count > 0){
+            if(section == 0){ //购物车商品行数
+                return ShoppingCartAll.count
+            }
+            else{
+                return 1
+            }
         }
         else{
-            return 1
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+            let label = UILabel(frame: self.tableView.bounds)
+            label.text = "没有商品放入购物车"
+            label.textAlignment = NSTextAlignment.Center
+            label.textColor = UIColor.lightGrayColor()
+            self.tableView.backgroundView = label
+        }
+        return 0
+    }
+    
+    //页面对外接口
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowGoodsInfo"
+        {
+            if let indexPath = self.tableView.indexPathForSelectedRow
+            {
+                NSUserDefaults.standardUserDefaults().setObject(ShoppingCartAll[indexPath.row].Goods_ID!, forKey: "GoodsInfoId")
+                NSNotificationCenter.defaultCenter().postNotificationName("GoodsInfoView", object: nil)
+            }
         }
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
