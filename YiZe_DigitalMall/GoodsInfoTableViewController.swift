@@ -58,13 +58,7 @@ class GoodsInfoTableViewController: UITableViewController {
     }
     
     @IBAction func ShoppingCartClick(sender: AnyObject) {
-        
-        if(NSUserDefaults.standardUserDefaults().valueForKey("ShoopingCart") == nil){
-            let ShoppingCartAll:[AnyObject!] = []
-            
-            NSUserDefaults.standardUserDefaults().setObject(ShoppingCartAll, forKey: "ShoopingCart")
-        }
-        
+
         ///////////////////////////////////////////////
         ///////////////////////////////////////////////
         ///////////////////////////////////////////////

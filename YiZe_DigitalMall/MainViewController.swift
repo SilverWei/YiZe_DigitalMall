@@ -24,6 +24,13 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         NSUserDefaults.standardUserDefaults().setObject(0, forKey: "SortSelectTrue")
+        
+        //创建购物车唯一ID
+        if(NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID") == nil){
+            let timeFormatter = NSDateFormatter()
+            timeFormatter.dateFormat = "MMddHHmmssSSS"
+            NSUserDefaults.standardUserDefaults().setObject(timeFormatter.stringFromDate(NSDate()) as String, forKey: "ShoppingCartUser_ID")
+        }
 
     }
 
@@ -44,15 +51,5 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

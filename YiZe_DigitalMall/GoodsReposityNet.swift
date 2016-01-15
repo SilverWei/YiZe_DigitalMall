@@ -198,3 +198,85 @@ func GoodsInfoOut(GoodsId:String) -> GetGoodsInfo?
     }
     return GetGoodsInfoGet
 }
+
+func GetNewGoods() -> [SearchInfoOut]?
+{
+    var GetNewGoodsAll = [SearchInfoOut]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetNewGoods.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                GetNewGoodsAll.append(SearchInfoOut(Goods_ID: json[i]["Goods_ID"].stringValue, Goods_Name: json[i]["Goods_Name"].stringValue, Goods_Image: json[i]["Goods_Image"] != nil ? BaseUrlImg + json[i]["Goods_Image"].string! : "", Goods_MarketPrice: json[i]["Goods_MarketPrice"].stringValue, Goods_MemberPrice: json[i]["Goods_MemberPrice"].stringValue))
+            }
+        
+        }
+        else{
+            return nil
+        }
+    }
+    return GetNewGoodsAll
+}
+
+func Recommended() -> [SearchInfoOut]?
+{
+    var RecommendedAll = [SearchInfoOut]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "Recommended.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                RecommendedAll.append(SearchInfoOut(Goods_ID: json[i]["Goods_ID"].stringValue, Goods_Name: json[i]["Goods_Name"].stringValue, Goods_Image: json[i]["Goods_Image"] != nil ? BaseUrlImg + json[i]["Goods_Image"].string! : "", Goods_MarketPrice: json[i]["Goods_MarketPrice"].stringValue, Goods_MemberPrice: json[i]["Goods_MemberPrice"].stringValue))
+            }
+            
+        }
+        else{
+            return nil
+        }
+    }
+    return RecommendedAll
+}
+
+func GetHotGoods() -> [SearchInfoOut]?
+{
+    var GetHotGoodsAll = [SearchInfoOut]()
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetHotGoods.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            for i in 0..<json.count{
+                //Do something you want
+                GetHotGoodsAll.append(SearchInfoOut(Goods_ID: json[i]["Goods_ID"].stringValue, Goods_Name: json[i]["Goods_Name"].stringValue, Goods_Image: json[i]["Goods_Image"] != nil ? BaseUrlImg + json[i]["Goods_Image"].string! : "", Goods_MarketPrice: json[i]["Goods_MarketPrice"].stringValue, Goods_MemberPrice: json[i]["Goods_MemberPrice"].stringValue))
+            }
+            
+        }
+        else{
+            return nil
+        }
+    }
+    return GetHotGoodsAll
+}
+
