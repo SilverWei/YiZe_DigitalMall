@@ -309,7 +309,7 @@ func GetShoppingCart(User_ID:String) -> [ShoppingCart]?
     return GetShoppingCart
 }
 
-func ShoppingCartHaveYes(User_ID:String, ShoppingCart_ID: String) -> Int
+func ShoppingCartHaveYes(User_ID:String, ShoppingCart_ID: String) -> String?
 {
     
     if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetShoppingCart.ashx") as String) {
@@ -328,11 +328,62 @@ func ShoppingCartHaveYes(User_ID:String, ShoppingCart_ID: String) -> Int
             let json = JSON(data: response)
             for i in 0..<json.count{
                 if(json[i]["Goods_ID"].stringValue == ShoppingCart_ID){
-                    return 1
+                    return json[i]["Shopping_ID"].stringValue
                 }
             }
         }
     }
-    return 0
+    return nil
 }
+
+func AddShoppingCarOut(ShoppingCartIn:ShoppingCart) -> String?
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "AddShoppingCart.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID": ShoppingCartIn.User_ID! as String,
+            "Shopping_Number": "1",
+            "Goods_ID": ShoppingCartIn.Goods_ID! as String,
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            return json["Code"].stringValue
+
+        }
+    }
+    return nil
+}
+
+func DelectShoppingCarOut(Shopping_ID:String) -> String?
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "DelectShoppingCart.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "Shopping_ID": Shopping_ID,
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            let json = JSON(data: response)
+            return json["Code"].stringValue
+            
+        }
+    }
+    return nil
+}
+
 

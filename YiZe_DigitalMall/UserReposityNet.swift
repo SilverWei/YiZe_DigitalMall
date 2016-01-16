@@ -165,7 +165,7 @@ func GetLikeGoodsOut(User_ID:String) -> [GetLikeGoods]?
             let json = JSON(data: response)
             for i in 0..<json.count{
                 //Do something you want
-                GetLikeGoodsAll.append(GetLikeGoods(LikeGoods_ID: json[i]["LikeGoods_ID"].string, Like_ID: json[i]["Like_ID"].string))
+                GetLikeGoodsAll.append(GetLikeGoods(LikeGoods_ID: json[i]["LikeGoods_ID"].string, Like_ID: json[i]["Like_ID"].string, User_ID: nil))
             }
             
         }
@@ -175,6 +175,36 @@ func GetLikeGoodsOut(User_ID:String) -> [GetLikeGoods]?
     }
     return GetLikeGoodsAll
 }
+
+func AddLikeGoodsOut(GetLikeGoodsIn:GetLikeGoods) -> String?
+{
+    
+    if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "AddLikeGoods.ashx") as String) {
+        let postRequest = NSMutableURLRequest(URL: url)
+        postRequest.timeoutInterval = 3.0
+        postRequest.HTTPMethod = "POST"
+        let param = [
+            "User_ID":GetLikeGoodsIn.User_ID! as String,
+            "Like_ID":GetLikeGoodsIn.Like_ID! as String,
+            "LikeGoods_ID":"",
+        ]
+        let jsonparam = try? NSJSONSerialization.dataWithJSONObject(param, options: NSJSONWritingOptions.PrettyPrinted)
+        postRequest.HTTPBody = jsonparam
+        if let response = try? NSURLConnection.sendSynchronousRequest(postRequest, returningResponse: nil) {
+            let responsestr = NSString(data: response, encoding: NSUTF8StringEncoding)
+            print(responsestr)
+            
+            return "1"
+            
+        }
+        else{
+            return nil
+        }
+    }
+    return nil
+}
+
+
 
 func LikeGoodsYesOrNo(User_ID:String, Goods_ID:String) -> Int
 {

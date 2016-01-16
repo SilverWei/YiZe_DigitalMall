@@ -185,6 +185,8 @@ class SearchTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
 
         if(GoodsInfoAll?.count >= 1){
+            self.tableView.backgroundView = nil
+            
             return (GoodsInfoAll?.count)!
         }
         else{

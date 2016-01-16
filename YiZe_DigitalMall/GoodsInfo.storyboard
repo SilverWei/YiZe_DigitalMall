@@ -85,6 +85,9 @@
                                                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="收藏"/>
+                                                    <connections>
+                                                        <action selector="AddGoodsLike:" destination="Plx-6X-Rte" eventType="touchUpInside" id="hVc-U1-vQ5"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-t2-x4B" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
                                                     <rect key="frame" x="328" y="8" width="245" height="32"/>
@@ -101,7 +104,7 @@
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <state key="normal" title="已放入购物车"/>
                                                     <connections>
-                                                        <action selector="ShoppingCartClick:" destination="Plx-6X-Rte" eventType="touchUpInside" id="3zP-S4-ohb"/>
+                                                        <action selector="UnShoppingCartClick:" destination="Plx-6X-Rte" eventType="touchUpInside" id="sbu-Aj-GQR"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -311,12 +314,6 @@
                                 <action selector="CloseViewButton:" destination="Plx-6X-Rte" id="mHp-wm-Hcf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="ic_question_answer_white" id="SvG-wk-AU7">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="KCz-Am-5uF" kind="show" id="IHp-qA-qNw"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="AddToCart" destination="Atk-t2-x4B" id="CTk-ig-DPm"/>
@@ -348,7 +345,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="968-GN-7dm">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="968-GN-7dm" id="ewh-jy-ZRA">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -387,6 +384,5 @@
     </scenes>
     <resources>
         <image name="Sort1stTopImage" width="1791" height="1194"/>
-        <image name="ic_question_answer_white" width="24" height="24"/>
     </resources>
 </document>

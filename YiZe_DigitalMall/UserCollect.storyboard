@@ -12,13 +12,13 @@
         <scene sceneID="4hQ-2x-kXl">
             <objects>
                 <tableViewController id="sfA-h7-KUq" customClass="UserCollertTableViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="111" sectionHeaderHeight="28" sectionFooterHeight="28" id="vt3-7u-zte">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="111" sectionHeaderHeight="18" sectionFooterHeight="18" id="vt3-7u-zte">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCollectCellView" rowHeight="105" id="d19-fW-3DW" customClass="SearchGoodsCell" customModule="易泽数码商城" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="105"/>
+                                <rect key="frame" x="0.0" y="114" width="600" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d19-fW-3DW" id="taH-dA-Eln">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
@@ -89,9 +89,6 @@
                             <connections>
                                 <action selector="CloseViewButton:" destination="sfA-h7-KUq" id="Uxq-0m-JeO"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="qay-bm-zhc">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

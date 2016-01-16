@@ -31,7 +31,6 @@ class MainViewController: UIViewController {
             timeFormatter.dateFormat = "MMddHHmmssSSS"
             NSUserDefaults.standardUserDefaults().setObject(timeFormatter.stringFromDate(NSDate()) as String, forKey: "ShoppingCartUser_ID")
         }
-
     }
 
     @IBAction func MainViewContainer(segue:UIStoryboardSegue){

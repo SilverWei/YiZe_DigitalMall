@@ -62,6 +62,8 @@ class UserCollertTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if(UserCollectAll?.count >= 1){
+            
+            self.tableView.backgroundView = nil
             return (UserCollectAll?.count)!
         }
         else{

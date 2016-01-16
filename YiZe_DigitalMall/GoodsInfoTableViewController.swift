@@ -60,15 +60,35 @@ class GoodsInfoTableViewController: UITableViewController {
     
     @IBAction func ShoppingCartClick(sender: AnyObject) {
 
-        ///////////////////////////////////////////////
-        ///////////////////////////////////////////////
-        ///////////////////////////////////////////////
-        ///////////////////////////////////////////////
-        ///////////////////////////////////////////////
+        if(AddShoppingCarOut(ShoppingCart(Goods_ID: GoodsInfo?.Goods_ID, User_ID: NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID") as? String, ShoppingCart_ID: nil, Goods_Quantity: nil)) != nil){
+            UnAddToCart.hidden = false
+            AddToCart.hidden = true
+            ProgressHUD.showSuccess("已放入购物车")
+        }
+        else{
+            ProgressHUD.showError("连接超时")
+        }
+        
     }
     
-
-
+    @IBAction func UnShoppingCartClick(sender: AnyObject) {
+        if(DelectShoppingCarOut((NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID")) as! String) != nil){
+            UnAddToCart.hidden = true
+            AddToCart.hidden = false
+        }
+        else{
+            ProgressHUD.showError("连接超时")
+        }
+    }
+    
+    
+    @IBAction func AddGoodsLike(sender: AnyObject) {
+        if(AddLikeGoodsOut(GetLikeGoods(LikeGoods_ID: nil, Like_ID: GoodsInfoId, User_ID: (NSUserDefaults.standardUserDefaults().valueForKey("UserID")) as? String)) != nil){
+            UnCollectButton.hidden = true
+            CollectButton.hidden = false
+        }
+    }
+    
     @IBAction func CloseViewButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -100,7 +120,7 @@ class GoodsInfoTableViewController: UITableViewController {
                 UnCollectButton.hidden = true
             }
             
-            if(ShoppingCartHaveYes("20151210132034939045", ShoppingCart_ID: GoodsInfoId) == 1){
+            if(ShoppingCartHaveYes((NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID")) as! String, ShoppingCart_ID: GoodsInfoId) != nil){
                 AddToCart.hidden = true
             }
             else{

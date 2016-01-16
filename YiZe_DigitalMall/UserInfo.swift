@@ -107,10 +107,12 @@ class UserInfo{
 class GetLikeGoods:NSObject{
     var LikeGoods_ID:String?
     var Like_ID:String?
+    var User_ID:String?
     
-    init(LikeGoods_ID:String?, Like_ID:String?) {
+    init(LikeGoods_ID:String?, Like_ID:String?, User_ID:String?) {
         self.LikeGoods_ID = LikeGoods_ID
         self.Like_ID = Like_ID
+        self.User_ID = User_ID
     }
 }
 

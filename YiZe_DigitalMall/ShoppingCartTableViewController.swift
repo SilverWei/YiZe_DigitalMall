@@ -19,7 +19,8 @@ class ShoppingCartTableViewController: UITableViewController {
     }
     
     func ShoppingCartRefresh(){
-        ShoppingCartAll = GetShoppingCart("20151210132034939045")!
+        print(NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID") as! String)
+        ShoppingCartAll = GetShoppingCart((NSUserDefaults.standardUserDefaults().valueForKey("ShoppingCartUser_ID")) as! String)!
         self.tableView.reloadData()
     }
     
@@ -30,6 +31,7 @@ class ShoppingCartTableViewController: UITableViewController {
     @IBAction func QuantityEditClick(sender: AnyObject) {
         print(sender.tag)
     }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -74,11 +76,25 @@ class ShoppingCartTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
-        return "从购物车删除"
+        let section = indexPath.section
+        
+        if(section == 0){
+            return "从购物车删除"
+        }
+        else{
+            return nil
+        }
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        print("!")
+        
+        if(DelectShoppingCarOut(ShoppingCartAll[indexPath.row].ShoppingCart_ID!) != nil){
+            ShoppingCartRefresh()
+            ProgressHUD.showSuccess("已从购物车中删除")
+        }
+        else{
+            ProgressHUD.showError("连接超时")
+        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
