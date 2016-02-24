@@ -7,8 +7,8 @@
 //
 
 import Foundation
-var BaseUrl = "http://172.16.101.42/Ashx/"
-var BaseUrlImg = "http://172.16.101.42"
+var BaseUrl = "http://172.16.101.62/Ashx/"
+var BaseUrlImg = "http://172.16.101.62"
 
 func UserLogin(用户名 UserName:String, 密码 Password:String) -> UserInfo.UserLoginOut?
 {
