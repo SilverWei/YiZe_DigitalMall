@@ -204,8 +204,6 @@ func AddLikeGoodsOut(GetLikeGoodsIn:GetLikeGoods) -> String?
     return nil
 }
 
-
-
 func LikeGoodsYesOrNo(User_ID:String, Goods_ID:String) -> Int
 {
     if let url = NSURL(string: NSString(format: "%@%@", BaseUrl , "GetLikeGoods.ashx") as String) {
