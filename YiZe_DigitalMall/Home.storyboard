@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KRm-zO-z6H">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="QdY-Iy-I80">
+            <objects>
+                <navigationController id="3Km-O4-clM" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vOA-h1-WtP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Fjb-5y-fOB" kind="relationship" relationship="rootViewController" id="nA3-8q-E9W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8i-T0-xic" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="-77.5"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="JpI-xC-rkG">
+            <objects>
+                <viewController id="wQv-0K-QSU" customClass="HomeViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nKe-8B-7fI"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yhd-ui-NvD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tmh-PI-cWi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDq-6b-Gdb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <segue destination="3Km-O4-clM" kind="embed" id="qsZ-xU-wM0"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URy-ED-C2m" customClass="MKButton" customModule="易泽数码商城" customModuleProvider="target">
+                                <rect key="frame" x="540" y="491" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.74509803919999995" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="4Tn-xX-S0y"/>
+                                    <constraint firstAttribute="height" constant="50" id="KUa-TN-hSd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" image="ic_local_grocery_store_white_36pt">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gN8-yy-Dap" kind="presentation" id="Tbq-kD-7th"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mDq-6b-Gdb" firstAttribute="top" secondItem="tmh-PI-cWi" secondAttribute="top" id="1zz-m8-pRP"/>
+                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="URy-ED-C2m" secondAttribute="bottom" constant="10" id="ZoF-Ff-fs4"/>
+                            <constraint firstItem="mDq-6b-Gdb" firstAttribute="leading" secondItem="tmh-PI-cWi" secondAttribute="leading" id="aDB-3h-oMP"/>
+                            <constraint firstItem="Yhd-ui-NvD" firstAttribute="top" secondItem="mDq-6b-Gdb" secondAttribute="bottom" id="lP9-WF-ZYh"/>
+                            <constraint firstAttribute="trailing" secondItem="URy-ED-C2m" secondAttribute="trailing" constant="10" id="s2J-K9-a6j"/>
+                            <constraint firstAttribute="trailing" secondItem="mDq-6b-Gdb" secondAttribute="trailing" id="yjm-Ha-Bm9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2dd-gv-0lE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="ShoppingCartbutton" destination="URy-ED-C2m" id="Elm-QG-Gbz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgO-du-TWk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="-77"/>
+        </scene>
+        <!--ShoppingCart-->
+        <scene sceneID="EbQ-Zv-OUM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShoppingCart" id="gN8-yy-Dap" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IwF-12-hdy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="400"/>
+        </scene>
+        <!--Home Table View Controller-->
+        <scene sceneID="5lh-0Y-j5W">
+            <objects>
+                <tableViewController id="Fjb-5y-fOB" customClass="HomeTableViewController" customModule="易泽数码商城" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="105" sectionHeaderHeight="18" sectionFooterHeight="18" id="PeD-E7-fyb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeGoodsCellView" rowHeight="105" id="iNx-Fv-nhc" customClass="SearchGoodsCell" customModule="易泽数码商城" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="94" width="600" height="105"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iNx-Fv-nhc" id="b4b-6m-l2l">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrP-bE-rhX">
+                                            <rect key="frame" x="116" y="8" width="456" height="52"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dsaggsdgdsgdsf" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uZL-Ys-hMu">
+                                            <rect key="frame" x="344" y="60" width="228" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.74509803919999995" green="0.0" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Tn5-ao-zmF">
+                                            <rect key="frame" x="96" y="60" width="228" height="36"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hki-vm-ecZ">
+                                            <rect key="frame" x="8" y="8" width="88" height="88"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Hki-vm-ecZ" secondAttribute="height" multiplier="1:1" id="68H-IY-dZF"/>
+                                                <constraint firstAttribute="height" constant="88" id="fal-gc-YU5"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SrP-bE-rhX" firstAttribute="leading" secondItem="Hki-vm-ecZ" secondAttribute="trailing" constant="20" id="07v-KL-mkt"/>
+                                        <constraint firstItem="Hki-vm-ecZ" firstAttribute="top" secondItem="b4b-6m-l2l" secondAttribute="topMargin" id="4Lo-ml-uQ3"/>
+                                        <constraint firstItem="Tn5-ao-zmF" firstAttribute="leading" secondItem="Hki-vm-ecZ" secondAttribute="trailing" id="8OF-8D-IhF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="SrP-bE-rhX" secondAttribute="trailing" constant="20" id="Izg-5w-kfT"/>
+                                        <constraint firstItem="uZL-Ys-hMu" firstAttribute="width" secondItem="Tn5-ao-zmF" secondAttribute="width" id="JY7-bz-Uun"/>
+                                        <constraint firstItem="uZL-Ys-hMu" firstAttribute="leading" secondItem="Tn5-ao-zmF" secondAttribute="trailing" constant="20" id="KII-LJ-xT1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uZL-Ys-hMu" secondAttribute="trailing" constant="20" id="KJO-gC-zvf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uZL-Ys-hMu" secondAttribute="bottom" id="LbK-LF-4WF"/>
+                                        <constraint firstItem="uZL-Ys-hMu" firstAttribute="top" secondItem="SrP-bE-rhX" secondAttribute="bottom" id="P6I-3y-TKG"/>
+                                        <constraint firstItem="Tn5-ao-zmF" firstAttribute="bottom" secondItem="b4b-6m-l2l" secondAttribute="bottomMargin" id="QF9-Hc-m2z"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Hki-vm-ecZ" secondAttribute="bottom" id="hcj-fH-bfR"/>
+                                        <constraint firstItem="Tn5-ao-zmF" firstAttribute="top" secondItem="SrP-bE-rhX" secondAttribute="bottom" id="k3L-8t-nft"/>
+                                        <constraint firstItem="SrP-bE-rhX" firstAttribute="top" secondItem="b4b-6m-l2l" secondAttribute="topMargin" id="lL7-3W-g4W"/>
+                                        <constraint firstItem="Hki-vm-ecZ" firstAttribute="leading" secondItem="b4b-6m-l2l" secondAttribute="leadingMargin" id="nhL-0w-LMx"/>
+                                        <constraint firstItem="SrP-bE-rhX" firstAttribute="height" secondItem="b4b-6m-l2l" secondAttribute="height" multiplier="0.5" id="yRn-Gw-Dcs"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="GoodsImage" destination="Hki-vm-ecZ" id="iKg-FF-84A"/>
+                                    <outlet property="GoodsMarketPrice" destination="Tn5-ao-zmF" id="NhQ-l7-ENU"/>
+                                    <outlet property="GoodsMemberPrice" destination="uZL-Ys-hMu" id="9Hh-Wr-dGr"/>
+                                    <outlet property="GoodsName" destination="SrP-bE-rhX" id="m0h-qt-TYC"/>
+                                    <segue destination="PSe-Y5-6f9" kind="presentation" identifier="ShowGoodsInfo" id="feM-tr-Thq"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Fjb-5y-fOB" id="XoQ-CD-opQ"/>
+                            <outlet property="delegate" destination="Fjb-5y-fOB" id="xp1-NP-vF6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="p1r-Yq-0KB">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_dns" id="5I6-FR-0TY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="zFB-n6-ftA" kind="unwind" unwindAction="MainViewContainer:" id="01P-jW-Vf8"/>
+                            </connections>
+                        </barButtonItem>
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" id="5ZK-dx-yN7" customClass="MKTextField" customModule="易泽数码商城">
+                            <rect key="frame" x="61" y="7" width="484" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="JHo-n2-rXt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="zFB-n6-ftA" kind="unwind" identifier="HomeSearchButtonClick" unwindAction="HomeSearchButtonClick:" id="1Bz-zP-teD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="HomeTableView" destination="PeD-E7-fyb" id="l2I-MC-gif"/>
+                        <outlet property="SearchTextView" destination="5ZK-dx-yN7" id="uB8-MO-OVg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ers-jo-nqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zFB-n6-ftA" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2174" y="-77.5"/>
+        </scene>
+        <!--GoodsInfo-->
+        <scene sceneID="D0O-Ww-aXn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GoodsInfo" id="PSe-Y5-6f9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vK1-QG-UYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2174.5" y="334"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="iwn-T0-84g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KRm-zO-z6H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="ic_home_white" id="AS5-Sa-ohb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="G1Q-d1-dmn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="37M-VR-8qg">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="wQv-0K-QSU" kind="relationship" relationship="rootViewController" id="n43-xU-K1g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vvL-Cb-otA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="-77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_dns" width="24" height="24"/>
+        <image name="ic_home_white" width="24" height="24"/>
+        <image name="ic_local_grocery_store_white_36pt" width="36" height="36"/>
+    </resources>
+</document>
